@@ -1,0 +1,3179 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, viewport-fit=cover' name='viewport'/>
+<meta content='ie=edge' http-equiv='x-ua-compatible'/>
+<title>ApexHR: Madura 24/7 Retail Empire Simulator — Ultimate Enterprise Engineering Edition</title>
+<meta content='Simulator Organization Development kelas enterprise. Ubah jaringan Toko Madura 24 Jam menjadi korporasi ritel nasional dengan Dynamic Mermaid.js Engine, Interconnected Forecast, dan SOP otomatis.' name='description'/>
+<meta content='ApexHR, Madura 24 Jam, HR OD Simulator, Mermaid.js, Forecast Engine, EdTech SaaS, Retail Empire' name='keywords'/>
+<meta content='ApexHR Enterprise' name='author'/>
+<meta content='index, follow, max-image-preview:large' name='robots'/>
+<meta content='#2563eb' name='theme-color'/>
+<meta content='summary_large_image' name='twitter:card'/>
+<meta content='ApexHR: Madura 24/7 Retail Empire Simulator' property='og:title'/>
+<meta content='Simulator HR OD interaktif dengan Mermaid.js Org-Chart Generator dan Forecast Engine real-time.' property='og:description'/>
+<meta content='website' property='og:type'/>
+<link href='https://fonts.googleapis.com' rel='preconnect'/>
+<link href='https://fonts.gstatic.com' rel='preconnect' crossorigin='crossorigin'/>
+<link href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap' rel='stylesheet'/>
+<link href='https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js' rel='preload' as='script'/>
+
+<b:skin><![CDATA[
+/* ==========================================================================
+   ApexHR — Madura 24/7 Retail Empire Simulator
+   Theme Skin: Clean, Bright, Modern Corporate (Glassmorphism + Crisp Type)
+   Design tokens live here so Blogger admins can re-brand without JS edits.
+   ========================================================================== */
+
+:root{
+  --apex-ink:#0b1220;
+  --apex-ink-soft:#475569;
+  --apex-ink-mute:#64748b;
+  --apex-line:rgba(15,23,42,.09);
+  --apex-line-soft:rgba(15,23,42,.055);
+  --apex-bg:#f4f7fc;
+  --apex-card:#ffffff;
+  --apex-brand:#2563eb;
+  --apex-brand-2:#4f46e5;
+  --apex-sky:#0ea5e9;
+  --apex-emerald:#059669;
+  --apex-amber:#d97706;
+  --apex-rose:#e11d48;
+  --apex-violet:#7c3aed;
+  --apex-radius:22px;
+  --apex-radius-sm:14px;
+  --apex-shadow:0 24px 60px -30px rgba(15,23,42,.30);
+  --apex-shadow-lg:0 40px 90px -40px rgba(15,23,42,.38);
+  --apex-ease:cubic-bezier(.16,1,.3,1);
+  --apex-font-head:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+  --apex-font-body:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;
+  --apex-font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{
+  -webkit-text-size-adjust:100%;
+  scroll-behavior:smooth;
+  scroll-padding-top:96px;
+}
+
+body{
+  margin:0;
+  padding:0;
+  background:var(--apex-bg);
+  color:var(--apex-ink);
+  font-family:var(--apex-font-body);
+  font-size:16px;
+  line-height:1.65;
+  letter-spacing:-.005em;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+h1,h2,h3,h4,h5,h6,.font-head{
+  font-family:var(--apex-font-head);
+  font-weight:800;
+  letter-spacing:-.035em;
+  line-height:1.1;
+  color:var(--apex-ink);
+  margin:0 0 .5em;
+}
+
+p{margin:0 0 1.1em}
+
+a{color:var(--apex-brand);text-decoration:none;transition:color .25s var(--apex-ease)}
+a:hover{color:var(--apex-brand-2)}
+
+img,svg{max-width:100%;height:auto;display:block}
+
+::selection{background:rgba(37,99,235,.18);color:#0b1220}
+
+:focus-visible{
+  outline:3px solid rgba(37,99,235,.55);
+  outline-offset:3px;
+  border-radius:8px;
+}
+
+/* Scrollbar ---------------------------------------------------------------- */
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:#eef2f9}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#93b4fb,#6366f1);border-radius:99px;border:3px solid #eef2f9}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#6f9bfb,#4f46e5)}
+
+/* ==========================================================================
+   AMBIENT BACKGROUND
+   ========================================================================== */
+.apex-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.apex-ambient .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;will-change:transform}
+.apex-ambient .orb-1{width:44vw;height:44vw;min-width:340px;min-height:340px;top:-12vw;left:-8vw;background:radial-gradient(circle at 30% 30%,rgba(37,99,235,.40),rgba(37,99,235,0) 68%);animation:apexDrift 26s var(--apex-ease) infinite}
+.apex-ambient .orb-2{width:38vw;height:38vw;min-width:300px;min-height:300px;top:22vh;right:-10vw;background:radial-gradient(circle at 60% 40%,rgba(14,165,233,.34),rgba(14,165,233,0) 68%);animation:apexDrift 32s var(--apex-ease) infinite reverse}
+.apex-ambient .orb-3{width:34vw;height:34vw;min-width:260px;min-height:260px;bottom:-8vw;left:24vw;background:radial-gradient(circle at 50% 50%,rgba(5,150,105,.26),rgba(5,150,105,0) 68%);animation:apexDrift 38s var(--apex-ease) infinite}
+.apex-ambient .grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(15,23,42,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.045) 1px,transparent 1px);
+  background-size:58px 58px;
+  mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 25%,transparent 78%);
+  -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 25%,transparent 78%);
+}
+@keyframes apexDrift{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  33%{transform:translate3d(4vw,3vh,0) scale(1.08)}
+  66%{transform:translate3d(-3vw,-2vh,0) scale(.95)}
+}
+
+/* ==========================================================================
+   GLASS + CARD PRIMITIVES
+   ========================================================================== */
+.apex-glass{
+  background:rgba(255,255,255,.70);
+  -webkit-backdrop-filter:blur(20px) saturate(170%);
+  backdrop-filter:blur(20px) saturate(170%);
+  border:1px solid rgba(255,255,255,.75);
+  box-shadow:var(--apex-shadow);
+}
+.apex-card{
+  background:var(--apex-card);
+  border:1px solid var(--apex-line);
+  border-radius:var(--apex-radius);
+  box-shadow:0 1px 2px rgba(15,23,42,.04),0 12px 32px -22px rgba(15,23,42,.22);
+  transition:transform .45s var(--apex-ease),box-shadow .45s var(--apex-ease),border-color .45s var(--apex-ease);
+}
+.apex-card-hover:hover{
+  transform:translateY(-7px);
+  border-color:rgba(37,99,235,.30);
+  box-shadow:0 1px 2px rgba(15,23,42,.04),0 30px 60px -28px rgba(37,99,235,.42);
+}
+.apex-card-hover:hover .apex-icon-wrap{transform:translateY(-3px) rotate(-6deg) scale(1.06)}
+.apex-icon-wrap{transition:transform .5s var(--apex-ease)}
+
+.apex-gradient-text{
+  background:linear-gradient(100deg,#2563eb 0%,#4f46e5 34%,#0ea5e9 66%,#059669 100%);
+  background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  animation:apexPan 9s ease-in-out infinite alternate;
+}
+@keyframes apexPan{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+
+.apex-chip{
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.34rem .78rem;border-radius:999px;
+  font-size:.8125rem;font-weight:600;line-height:1.35;
+  border:1px solid var(--apex-line);background:rgba(255,255,255,.8);
+  color:var(--apex-ink-soft);
+}
+.apex-chip-blue{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
+.apex-chip-green{background:#ecfdf5;border-color:#a7f3d0;color:#047857}
+.apex-chip-amber{background:#fffbeb;border-color:#fde68a;color:#b45309}
+.apex-chip-rose{background:#fff1f2;border-color:#fecdd3;color:#be123c}
+.apex-chip-violet{background:#f5f3ff;border-color:#ddd6fe;color:#6d28d9}
+
+/* Buttons ------------------------------------------------------------------ */
+.apex-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  min-height:52px;padding:.9rem 1.6rem;border:0;border-radius:999px;
+  font-family:var(--apex-font-head);font-size:1rem;font-weight:700;letter-spacing:-.01em;
+  cursor:pointer;position:relative;overflow:hidden;text-align:center;
+  transition:transform .35s var(--apex-ease),box-shadow .35s var(--apex-ease),filter .35s var(--apex-ease);
+}
+.apex-btn:active{transform:scale(.975)}
+.apex-btn-primary{
+  color:#fff;
+  background:linear-gradient(120deg,#2563eb,#4f46e5 55%,#0ea5e9);
+  background-size:180% 180%;
+  box-shadow:0 16px 34px -14px rgba(37,99,235,.65);
+  animation:apexPan 7s ease-in-out infinite alternate;
+}
+.apex-btn-primary:hover{transform:translateY(-3px);box-shadow:0 24px 46px -16px rgba(37,99,235,.72);filter:saturate(1.1)}
+.apex-btn-ghost{
+  color:var(--apex-ink);background:rgba(255,255,255,.86);
+  border:1px solid var(--apex-line);box-shadow:0 10px 26px -18px rgba(15,23,42,.4);
+}
+.apex-btn-ghost:hover{transform:translateY(-3px);border-color:rgba(37,99,235,.4);color:var(--apex-brand)}
+.apex-btn-sm{min-height:42px;padding:.55rem 1.05rem;font-size:.9375rem}
+.apex-btn::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg,transparent 28%,rgba(255,255,255,.42) 50%,transparent 72%);
+  transform:translateX(-120%);transition:transform .75s var(--apex-ease);
+}
+.apex-btn:hover::after{transform:translateX(120%)}
+
+/* ==========================================================================
+   SCROLL REVEAL + STAGGER
+   ========================================================================== */
+.apex-reveal{
+  opacity:0;transform:translate3d(0,32px,0);
+  transition:opacity .85s var(--apex-ease),transform .85s var(--apex-ease);
+  transition-delay:var(--d,0ms);will-change:opacity,transform;
+}
+.apex-reveal.apex-in{opacity:1;transform:none}
+.apex-reveal-l{transform:translate3d(-34px,0,0)}
+.apex-reveal-r{transform:translate3d(34px,0,0)}
+.apex-reveal-s{transform:scale(.94)}
+@media (prefers-reduced-motion:reduce){
+  .apex-reveal,.apex-reveal-l,.apex-reveal-r,.apex-reveal-s{opacity:1!important;transform:none!important;transition:none!important}
+  .apex-ambient .orb,.apex-gradient-text,.apex-btn-primary{animation:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+.apex-nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  transition:background .45s var(--apex-ease),box-shadow .45s var(--apex-ease),backdrop-filter .45s var(--apex-ease),border-color .45s var(--apex-ease);
+  border-bottom:1px solid transparent;
+}
+.apex-nav.apex-scrolled{
+  background:rgba(255,255,255,.82);
+  -webkit-backdrop-filter:blur(22px) saturate(180%);
+  backdrop-filter:blur(22px) saturate(180%);
+  border-bottom-color:var(--apex-line);
+  box-shadow:0 12px 34px -26px rgba(15,23,42,.45);
+}
+.apex-nav-link{
+  position:relative;padding:.5rem .2rem;font-weight:600;font-size:.9688rem;color:var(--apex-ink-soft);
+  transition:color .3s var(--apex-ease);
+}
+.apex-nav-link::after{
+  content:'';position:absolute;left:0;right:100%;bottom:0;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,#2563eb,#0ea5e9);
+  transition:right .4s var(--apex-ease);
+}
+.apex-nav-link:hover,.apex-nav-link[aria-current='true']{color:var(--apex-brand)}
+.apex-nav-link:hover::after,.apex-nav-link[aria-current='true']::after{right:0}
+.apex-burger span{display:block;width:22px;height:2px;border-radius:2px;background:var(--apex-ink);transition:transform .4s var(--apex-ease),opacity .3s var(--apex-ease)}
+.apex-burger[aria-expanded='true'] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.apex-burger[aria-expanded='true'] span:nth-child(2){opacity:0}
+.apex-burger[aria-expanded='true'] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.apex-mobile-menu{
+  max-height:0;overflow:hidden;opacity:0;
+  transition:max-height .55s var(--apex-ease),opacity .4s var(--apex-ease);
+}
+.apex-mobile-menu.apex-open{max-height:520px;opacity:1}
+
+/* Progress bar ------------------------------------------------------------- */
+.apex-progress{
+  position:fixed;top:0;left:0;height:3px;width:100%;z-index:70;transform-origin:0 50%;
+  transform:scaleX(0);
+  background:linear-gradient(90deg,#2563eb,#4f46e5,#0ea5e9,#059669);
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.apex-hero-orb{
+  position:absolute;border-radius:50%;
+  background:conic-gradient(from 180deg,#2563eb,#0ea5e9,#059669,#4f46e5,#2563eb);
+  filter:blur(46px);opacity:.32;animation:apexSpin 28s linear infinite;
+}
+@keyframes apexSpin{to{transform:rotate(360deg)}}
+.apex-float{animation:apexFloat 7s ease-in-out infinite}
+.apex-float-2{animation:apexFloat 9s ease-in-out infinite .8s}
+@keyframes apexFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.apex-live-dot{position:relative;display:inline-block;width:9px;height:9px;border-radius:50%;background:#10b981}
+.apex-live-dot::after{
+  content:'';position:absolute;inset:-6px;border-radius:50%;
+  border:2px solid rgba(16,185,129,.55);animation:apexPing 1.9s var(--apex-ease) infinite;
+}
+@keyframes apexPing{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.5);opacity:0}}
+.apex-marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.apex-marquee-track{display:flex;gap:3.5rem;width:max-content;animation:apexMarquee 34s linear infinite}
+.apex-marquee:hover .apex-marquee-track{animation-play-state:paused}
+@keyframes apexMarquee{to{transform:translateX(-50%)}}
+
+/* ==========================================================================
+   SIMULATOR PANEL
+   ========================================================================== */
+.apex-panel{
+  background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.86));
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  border:1px solid var(--apex-line);border-radius:var(--apex-radius);
+  box-shadow:var(--apex-shadow);
+}
+.apex-tab{
+  position:relative;padding:.62rem 1rem;border-radius:12px;font-size:.9375rem;font-weight:700;
+  color:var(--apex-ink-mute);background:transparent;border:1px solid transparent;cursor:pointer;
+  transition:all .35s var(--apex-ease);white-space:nowrap;
+}
+.apex-tab:hover{color:var(--apex-brand);background:rgba(37,99,235,.07)}
+.apex-tab.apex-active{
+  color:#fff;background:linear-gradient(120deg,#2563eb,#4f46e5);
+  box-shadow:0 10px 22px -12px rgba(37,99,235,.75);
+}
+.apex-scroll-x{overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.apex-scroll-x::-webkit-scrollbar{height:6px}
+
+/* Range sliders ------------------------------------------------------------ */
+.apex-range{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:99px;outline:none;cursor:grab;background:#e2e8f4}
+.apex-range:active{cursor:grabbing}
+.apex-range::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;
+  background:#fff;border:4px solid #2563eb;cursor:grab;
+  box-shadow:0 6px 16px -4px rgba(37,99,235,.6);
+  transition:transform .25s var(--apex-ease),border-color .25s var(--apex-ease);
+}
+.apex-range::-webkit-slider-thumb:hover{transform:scale(1.16)}
+.apex-range:active::-webkit-slider-thumb{transform:scale(1.05);border-color:#4f46e5}
+.apex-range::-moz-range-thumb{
+  width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid #2563eb;cursor:grab;
+  box-shadow:0 6px 16px -4px rgba(37,99,235,.6);
+}
+.apex-range-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.35rem}
+.apex-range-val{font-family:var(--apex-font-mono);font-size:1.0625rem;font-weight:600;color:var(--apex-brand)}
+
+/* Select ------------------------------------------------------------------- */
+.apex-select{
+  width:100%;min-height:50px;padding:.7rem 2.6rem .7rem 1rem;border-radius:14px;
+  border:1px solid var(--apex-line);background:#fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right .85rem center/18px;
+  -webkit-appearance:none;appearance:none;
+  font-family:var(--apex-font-body);font-size:1rem;font-weight:600;color:var(--apex-ink);cursor:pointer;
+  transition:border-color .3s var(--apex-ease),box-shadow .3s var(--apex-ease);
+}
+.apex-select:focus{border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.14);outline:none}
+
+/* Inputs ------------------------------------------------------------------- */
+.apex-input{
+  width:100%;min-height:50px;padding:.7rem 1rem;border-radius:14px;
+  border:1px solid var(--apex-line);background:#fff;
+  font-family:var(--apex-font-body);font-size:1rem;color:var(--apex-ink);
+  transition:border-color .3s var(--apex-ease),box-shadow .3s var(--apex-ease);
+}
+.apex-input:focus{border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.14);outline:none}
+.apex-label{display:block;font-size:.875rem;font-weight:700;color:var(--apex-ink-soft);margin-bottom:.35rem;letter-spacing:-.005em}
+
+/* HUD stat cards ----------------------------------------------------------- */
+.apex-stat{
+  position:relative;overflow:hidden;border-radius:18px;padding:1.05rem 1.1rem;
+  background:#fff;border:1px solid var(--apex-line);
+  transition:transform .4s var(--apex-ease),box-shadow .4s var(--apex-ease);
+}
+.apex-stat:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(15,23,42,.42)}
+.apex-stat::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg,#2563eb,#0ea5e9);
+}
+.apex-stat.g-green::before{background:linear-gradient(180deg,#059669,#10b981)}
+.apex-stat.g-amber::before{background:linear-gradient(180deg,#d97706,#f59e0b)}
+.apex-stat.g-rose::before{background:linear-gradient(180deg,#e11d48,#fb7185)}
+.apex-stat.g-violet::before{background:linear-gradient(180deg,#7c3aed,#a78bfa)}
+.apex-stat-value{font-family:var(--apex-font-head);font-size:1.5rem;font-weight:800;letter-spacing:-.04em;line-height:1.15}
+.apex-stat-label{font-size:.8125rem;font-weight:600;color:var(--apex-ink-mute);text-transform:uppercase;letter-spacing:.06em}
+
+/* Mermaid canvas ----------------------------------------------------------- */
+.apex-canvas{
+  position:relative;border-radius:18px;overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 12%,rgba(37,99,235,.07),transparent 45%),
+    radial-gradient(circle at 84% 88%,rgba(5,150,105,.07),transparent 45%),
+    #fbfcff;
+  border:1px solid var(--apex-line);
+  min-height:320px;
+}
+.apex-canvas .apex-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(15,23,42,.10) 1.1px,transparent 1.1px);
+  background-size:22px 22px;opacity:.65;
+}
+.apex-canvas-inner{position:relative;z-index:1;padding:1.1rem;overflow:auto;max-height:520px}
+.apex-canvas-inner svg{max-width:100%;height:auto}
+.apex-canvas-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:.75rem;background:rgba(251,252,255,.9);z-index:2;font-weight:600;color:var(--apex-ink-mute)}
+.apex-spinner{width:22px;height:22px;border-radius:50%;border:3px solid #dbe4f5;border-top-color:#2563eb;animation:apexRot .8s linear infinite}
+@keyframes apexRot{to{transform:rotate(360deg)}}
+
+/* Domino chain ------------------------------------------------------------- */
+.apex-domino{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:.25rem}
+.apex-domino-node{
+  flex:0 0 auto;min-width:172px;max-width:210px;padding:.85rem .95rem;border-radius:16px;
+  background:#fff;border:1px solid var(--apex-line);
+  box-shadow:0 10px 26px -20px rgba(15,23,42,.5);
+  animation:apexPop .5s var(--apex-ease) both;
+  transition:transform .35s var(--apex-ease),box-shadow .35s var(--apex-ease);
+}
+.apex-domino-node:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 18px 34px -22px rgba(15,23,42,.55)}
+.apex-domino-node .n-step{font-family:var(--apex-font-mono);font-size:.75rem;font-weight:600;color:var(--apex-ink-mute)}
+.apex-domino-node .n-name{font-family:var(--apex-font-head);font-weight:700;font-size:.9688rem;line-height:1.3;margin:.2rem 0 .3rem}
+.apex-domino-node .n-val{font-family:var(--apex-font-mono);font-size:.875rem;font-weight:600}
+.apex-domino-arrow{flex:0 0 auto;display:flex;align-items:center;padding:0 .35rem;color:#94a3b8;font-size:1.1rem}
+.apex-tone-input{border-left:4px solid #2563eb}
+.apex-tone-good{border-left:4px solid #059669}
+.apex-tone-risk{border-left:4px solid #d97706}
+.apex-tone-critical{border-left:4px solid #e11d48;background:#fff5f6}
+@keyframes apexPop{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+
+/* Risk chips --------------------------------------------------------------- */
+.apex-risk{
+  display:flex;gap:.7rem;align-items:flex-start;padding:.8rem .95rem;border-radius:14px;
+  border:1px solid var(--apex-line);background:#fff;animation:apexPop .45s var(--apex-ease) both;
+}
+.apex-risk.tinggi{border-color:#fecdd3;background:#fff1f2}
+.apex-risk.sedang{border-color:#fde68a;background:#fffbeb}
+.apex-risk.kritis{border-color:#fda4af;background:#ffe4e6}
+.apex-risk b{font-family:var(--apex-font-head);font-size:.9688rem;display:block}
+.apex-risk span{font-size:.875rem;color:var(--apex-ink-soft);line-height:1.45}
+
+/* Tables ------------------------------------------------------------------- */
+.apex-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.9375rem}
+.apex-table th{
+  text-align:left;font-family:var(--apex-font-head);font-size:.8125rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.06em;color:var(--apex-ink-mute);
+  padding:.8rem .9rem;border-bottom:1px solid var(--apex-line);white-space:nowrap;background:#f8fafd;
+}
+.apex-table td{padding:.8rem .9rem;border-bottom:1px solid var(--apex-line-soft);vertical-align:middle}
+.apex-table tbody tr{transition:background .25s var(--apex-ease)}
+.apex-table tbody tr:hover{background:#f6f9ff}
+.apex-table tbody tr:last-child td{border-bottom:0}
+.apex-badge{display:inline-flex;align-items:center;padding:.2rem .6rem;border-radius:999px;font-size:.8125rem;font-weight:700;border:1px solid transparent}
+.apex-badge-ok{background:#ecfdf5;color:#047857;border-color:#a7f3d0}
+.apex-badge-off{background:#f1f5f9;color:#475569;border-color:#e2e8f0}
+.apex-badge-fam{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe}
+.apex-badge-pro{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
+.apex-icon-btn{
+  display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;
+  border:1px solid var(--apex-line);background:#fff;cursor:pointer;color:var(--apex-ink-mute);
+  transition:all .3s var(--apex-ease);
+}
+.apex-icon-btn:hover{color:#fff;background:#2563eb;border-color:#2563eb;transform:translateY(-2px)}
+.apex-icon-btn.danger:hover{background:#e11d48;border-color:#e11d48}
+
+/* Progress meters ---------------------------------------------------------- */
+.apex-meter{height:7px;border-radius:99px;background:#e8eef8;overflow:hidden}
+.apex-meter > i{display:block;height:100%;border-radius:99px;transition:width .7s var(--apex-ease)}
+
+/* ==========================================================================
+   FAQ ACCORDION
+   ========================================================================== */
+.apex-acc{border:1px solid var(--apex-line);border-radius:18px;background:#fff;overflow:hidden;transition:box-shadow .4s var(--apex-ease),border-color .4s var(--apex-ease)}
+.apex-acc:hover{border-color:rgba(37,99,235,.28)}
+.apex-acc.apex-open{box-shadow:0 22px 46px -30px rgba(37,99,235,.55);border-color:rgba(37,99,235,.32)}
+.apex-acc-btn{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.15rem 1.25rem;background:none;border:0;cursor:pointer;text-align:left;
+  font-family:var(--apex-font-head);font-size:1.0625rem;font-weight:700;color:var(--apex-ink);
+}
+.apex-acc-icon{
+  flex:0 0 auto;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+  background:#eff6ff;color:#2563eb;transition:transform .45s var(--apex-ease),background .35s var(--apex-ease);
+}
+.apex-acc.apex-open .apex-acc-icon{transform:rotate(45deg);background:#2563eb;color:#fff}
+.apex-acc-body{max-height:0;overflow:hidden;transition:max-height .5s var(--apex-ease)}
+.apex-acc-body-inner{padding:0 1.25rem 1.25rem;color:var(--apex-ink-soft);font-size:1rem;line-height:1.7}
+
+/* ==========================================================================
+   MODAL + TOAST
+   ========================================================================== */
+.apex-overlay{
+  position:fixed;inset:0;z-index:80;display:flex;align-items:flex-end;justify-content:center;padding:0;
+  background:rgba(11,18,32,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  opacity:0;pointer-events:none;transition:opacity .4s var(--apex-ease);
+}
+.apex-overlay.apex-open{opacity:1;pointer-events:auto}
+.apex-modal{
+  width:100%;max-width:620px;max-height:92vh;overflow:auto;
+  background:#fff;border-radius:26px 26px 0 0;
+  transform:translateY(40px) scale(.98);transition:transform .5s var(--apex-ease);
+  box-shadow:0 -20px 70px -30px rgba(11,18,32,.6);
+}
+.apex-overlay.apex-open .apex-modal{transform:none}
+@media (min-width:640px){
+  .apex-overlay{align-items:center;padding:1.5rem}
+  .apex-modal{border-radius:26px;transform:translateY(24px) scale(.97)}
+}
+.apex-toast-wrap{position:fixed;z-index:90;left:50%;transform:translateX(-50%);bottom:1.25rem;display:flex;flex-direction:column;gap:.6rem;width:min(94vw,460px);pointer-events:none}
+.apex-toast{
+  display:flex;gap:.75rem;align-items:flex-start;padding:.95rem 1.1rem;border-radius:16px;
+  background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  border:1px solid var(--apex-line);box-shadow:0 22px 48px -24px rgba(15,23,42,.5);
+  animation:apexToastIn .5s var(--apex-ease) both;font-size:.9375rem;font-weight:600;
+}
+.apex-toast.out{animation:apexToastOut .4s var(--apex-ease) both}
+.apex-toast .t-dot{flex:0 0 auto;width:10px;height:10px;border-radius:50%;margin-top:.45rem}
+@keyframes apexToastIn{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes apexToastOut{to{opacity:0;transform:translateY(14px) scale(.97)}}
+
+/* Back to top -------------------------------------------------------------- */
+.apex-top{
+  position:fixed;right:1.1rem;bottom:1.1rem;z-index:65;width:50px;height:50px;border-radius:50%;
+  display:grid;place-items:center;border:1px solid var(--apex-line);background:rgba(255,255,255,.92);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--apex-brand);cursor:pointer;
+  box-shadow:0 18px 38px -22px rgba(15,23,42,.5);
+  opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;
+  transition:all .45s var(--apex-ease);
+}
+.apex-top.apex-show{opacity:1;transform:none;pointer-events:auto}
+.apex-top:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateY(-3px)}
+
+/* Skip link ---------------------------------------------------------------- */
+.apex-skip{
+  position:absolute;left:-9999px;top:0;z-index:100;padding:.85rem 1.25rem;border-radius:0 0 14px 0;
+  background:#2563eb;color:#fff;font-weight:700;
+}
+.apex-skip:focus{left:0}
+
+/* Utility ------------------------------------------------------------------ */
+.apex-hr{height:1px;background:linear-gradient(90deg,transparent,var(--apex-line),transparent);border:0}
+.apex-num{font-family:var(--apex-font-mono);font-variant-numeric:tabular-nums}
+.apex-max{max-width:1240px;margin-inline:auto;padding-inline:1.25rem}
+@media (min-width:1024px){.apex-max{padding-inline:2rem}}
+.apex-section{padding:4.5rem 0;position:relative;z-index:1}
+@media (min-width:1024px){.apex-section{padding:6.5rem 0}}
+.apex-eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:999px;
+  background:#fff;border:1px solid var(--apex-line);
+  font-size:.8125rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--apex-brand);
+  box-shadow:0 8px 22px -18px rgba(15,23,42,.6);
+}
+.apex-h2{font-size:clamp(1.85rem,5.2vw,3.15rem)}
+.apex-h3{font-size:clamp(1.25rem,2.6vw,1.5rem)}
+.apex-lead{font-size:clamp(1.0313rem,1.6vw,1.1875rem);color:var(--apex-ink-soft);line-height:1.75}
+
+/* Blogger widget host ------------------------------------------------------ */
+.apex-widget-host{display:none}
+]]></b:skin>
+
+<style type='text/css'>
+/*<![CDATA[*/
+/* Runtime-only refinements that are not part of the Blogger skin contract. */
+.apex-canvas-inner .nodeLabel,.apex-canvas-inner .edgeLabel{font-family:'Inter',sans-serif!important;font-size:14px!important}
+.apex-canvas-inner .node rect,.apex-canvas-inner .node circle,.apex-canvas-inner .node polygon{rx:10px}
+.apex-nav-progress{position:absolute;left:0;bottom:-1px;height:2px;background:linear-gradient(90deg,#2563eb,#0ea5e9);transition:width .25s linear;opacity:0}
+.apex-scrolled .apex-nav-progress{opacity:1}
+@media print{.apex-nav,.apex-ambient,.apex-top,.apex-toast-wrap,.apex-overlay{display:none!important}}
+/*]]>*/
+</style>
+
+<script src='https://cdn.tailwindcss.com?plugins=forms'></script>
+<script type='text/javascript'>
+//<![CDATA[
+window.tailwind = window.tailwind || {};
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        head: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+      },
+      colors: {
+        apex: {
+          ink: '#0b1220', soft: '#475569', mute: '#64748b',
+          brand: '#2563eb', brand2: '#4f46e5', sky: '#0ea5e9',
+          emerald: '#059669', amber: '#d97706', rose: '#e11d48', violet: '#7c3aed',
+          bg: '#f4f7fc', line: 'rgba(15,23,42,.09)'
+        }
+      },
+      boxShadow: {
+        apex: '0 24px 60px -30px rgba(15,23,42,.30)',
+        apexLg: '0 40px 90px -40px rgba(15,23,42,.38)'
+      },
+      borderRadius: { apex: '22px' }
+    }
+  }
+};
+//]]>
+</script>
+<script src='https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js'></script>
+</head>
+
+<body class='font-body text-apex-ink antialiased'>
+
+<a class='apex-skip' href='#simulator'>Lewati ke Simulator ApexHR</a>
+
+<div aria-hidden='true' class='apex-ambient'>
+  <div class='orb orb-1'></div>
+  <div class='orb orb-2'></div>
+  <div class='orb orb-3'></div>
+  <div class='grid'></div>
+</div>
+
+<div aria-hidden='true' class='apex-progress' id='apexProgress'></div>
+
+<header class='apex-nav' id='apexNav'>
+  <div class='apex-max'>
+    <nav aria-label='Navigasi utama' class='flex items-center justify-between h-[72px] lg:h-[84px]'>
+      <a class='flex items-center gap-3 group' href='#hero'>
+        <span class='relative grid place-items-center w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-sky-500 shadow-lg shadow-blue-600/30 transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3'>
+          <svg aria-hidden='true' class='w-6 h-6 text-white' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'>
+            <path d='M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6'/>
+          </svg>
+          <span class='absolute -inset-1 rounded-2xl bg-blue-500/25 blur-md -z-10'></span>
+        </span>
+        <span class='leading-tight'>
+          <span class='block font-head font-extrabold text-[1.0625rem] tracking-tight'>ApexHR</span>
+          <span class='block text-[.75rem] font-semibold text-apex-mute tracking-wide'>MADURA 24/7 EMPIRE</span>
+        </span>
+      </a>
+
+      <ul class='hidden lg:flex items-center gap-8'>
+        <li><a class='apex-nav-link' href='#hero'>Beranda</a></li>
+        <li><a class='apex-nav-link' href='#fitur'>Modul</a></li>
+        <li><a class='apex-nav-link' href='#simulator'>Simulator</a></li>
+        <li><a class='apex-nav-link' href='#manfaat'>Manfaat</a></li>
+        <li><a class='apex-nav-link' href='#faq'>FAQ</a></li>
+      </ul>
+
+      <div class='flex items-center gap-2.5'>
+        <span class='hidden md:inline-flex apex-chip apex-chip-green'>
+          <span class='apex-live-dot'></span> Engine Online
+        </span>
+        <a class='apex-btn apex-btn-primary apex-btn-sm hidden sm:inline-flex' href='#simulator'>
+          Mulai Simulasi
+          <svg aria-hidden='true' class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.4' viewBox='0 0 24 24'><path d='M5 12h14M13 6l6 6-6 6'/></svg>
+        </a>
+        <button aria-controls='apexMobileMenu' aria-expanded='false' aria-label='Buka menu navigasi' class='apex-burger lg:hidden grid place-items-center w-11 h-11 rounded-xl border border-apex-line bg-white/80 gap-[5px]' id='apexBurger' type='button'>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <div class='apex-mobile-menu lg:hidden' id='apexMobileMenu'>
+    <div class='apex-max pb-5'>
+      <div class='apex-glass rounded-2xl p-3 grid gap-1'>
+        <a class='px-4 py-3 rounded-xl font-semibold text-apex-soft hover:bg-blue-50 hover:text-blue-700 transition-colors' href='#hero'>Beranda</a>
+        <a class='px-4 py-3 rounded-xl font-semibold text-apex-soft hover:bg-blue-50 hover:text-blue-700 transition-colors' href='#fitur'>Modul Simulasi</a>
+        <a class='px-4 py-3 rounded-xl font-semibold text-apex-soft hover:bg-blue-50 hover:text-blue-700 transition-colors' href='#simulator'>Dashboard Forecast</a>
+        <a class='px-4 py-3 rounded-xl font-semibold text-apex-soft hover:bg-blue-50 hover:text-blue-700 transition-colors' href='#manfaat'>Manfaat</a>
+        <a class='px-4 py-3 rounded-xl font-semibold text-apex-soft hover:bg-blue-50 hover:text-blue-700 transition-colors' href='#faq'>FAQ</a>
+        <a class='apex-btn apex-btn-primary w-full mt-2' href='#simulator'>Mulai Simulasi Sekarang</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id='main'>
+
+  <!-- ===================== HERO ===================== -->
+  <section class='relative pt-[112px] lg:pt-[152px] pb-16 lg:pb-24 overflow-hidden' id='hero'>
+    <div class='apex-max relative z-10'>
+      <div class='grid lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-16 items-center'>
+
+        <div>
+          <div class='apex-reveal' style='--d:60ms'>
+            <span class='apex-eyebrow'>
+              <span class='apex-live-dot'></span>
+              Enterprise Engineering Edition v3.0
+            </span>
+          </div>
+
+          <h1 class='apex-reveal mt-6 font-head text-[2.35rem] leading-[1.06] sm:text-[3rem] lg:text-[3.9rem] tracking-[-.04em]' style='--d:140ms'>
+            Bangun Korporasi Ritel dari
+            <span class='apex-gradient-text'>Toko Madura 24 Jam</span>
+            Menjadi Imperium Nasional.
+          </h1>
+
+          <p class='apex-reveal apex-lead mt-6 max-w-[38rem]' style='--d:220ms'>
+            <strong class='text-apex-ink'>ApexHR</strong> adalah simulator Organization Development
+            tingkat enterprise. Setiap keputusan HR Anda tidak hanya mengubah angka forecast —
+            ia <em class='not-italic font-semibold text-blue-700'>secara otomatis menggambar ulang</em>
+            struktur organisasi, SOP, dan peta proses bisnis secara real-time dengan
+            <span class='font-semibold text-apex-ink'>Dynamic Mermaid.js Engine</span>.
+          </p>
+
+          <div class='apex-reveal mt-8 flex flex-col sm:flex-row gap-3.5' style='--d:300ms'>
+            <a class='apex-btn apex-btn-primary' href='#simulator'>
+              <svg aria-hidden='true' class='w-5 h-5' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'><path d='M5 3l14 9-14 9V3z'/></svg>
+              Mainkan Simulator
+            </a>
+            <a class='apex-btn apex-btn-ghost' href='#fitur'>
+              Lihat 5 Modul OD
+              <svg aria-hidden='true' class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.4' viewBox='0 0 24 24'><path d='M12 5v14M6 13l6 6 6-6'/></svg>
+            </a>
+          </div>
+
+          <dl class='apex-reveal mt-11 grid grid-cols-2 sm:grid-cols-4 gap-x-5 gap-y-7' style='--d:380ms'>
+            <div>
+              <dd class='font-head text-[1.75rem] lg:text-[2rem] font-extrabold tracking-tight text-apex-ink' data-apex-count='5' data-apex-suffix=''>0</dd>
+              <dt class='text-[.8125rem] font-semibold text-apex-mute uppercase tracking-[.07em] mt-1'>Modul OD</dt>
+            </div>
+            <div>
+              <dd class='font-head text-[1.75rem] lg:text-[2rem] font-extrabold tracking-tight text-apex-ink' data-apex-count='4' data-apex-suffix=''>0</dd>
+              <dt class='text-[.8125rem] font-semibold text-apex-mute uppercase tracking-[.07em] mt-1'>Diagram Mermaid</dt>
+            </div>
+            <div>
+              <dd class='font-head text-[1.75rem] lg:text-[2rem] font-extrabold tracking-tight text-apex-ink' data-apex-count='42' data-apex-suffix='+'>0</dd>
+              <dt class='text-[.8125rem] font-semibold text-apex-mute uppercase tracking-[.07em] mt-1'>Variabel Forecast</dt>
+            </div>
+            <div>
+              <dd class='font-head text-[1.75rem] lg:text-[2rem] font-extrabold tracking-tight text-apex-ink' data-apex-count='100' data-apex-suffix='%'>0</dd>
+              <dt class='text-[.8125rem] font-semibold text-apex-mute uppercase tracking-[.07em] mt-1'>REST API Envelope</dt>
+            </div>
+          </dl>
+        </div>
+
+        <div class='apex-reveal apex-reveal-r relative' style='--d:260ms'>
+          <div aria-hidden='true' class='apex-hero-orb w-[320px] h-[320px] lg:w-[420px] lg:h-[420px] -top-10 -right-10'></div>
+
+          <div class='apex-glass rounded-[26px] p-5 lg:p-6 relative apex-float'>
+            <div class='flex items-center justify-between gap-3 mb-4'>
+              <div class='flex items-center gap-2.5'>
+                <span class='apex-live-dot'></span>
+                <h2 class='font-head font-bold text-[1.0625rem] m-0'>Live Forecast HUD</h2>
+              </div>
+              <span class='apex-chip apex-chip-blue font-mono text-[.75rem]' id='heroQuarter'>Q1 · 2026</span>
+            </div>
+
+            <div class='grid grid-cols-2 gap-3'>
+              <div class='rounded-2xl bg-white border border-apex-line p-3.5'>
+                <p class='apex-stat-label m-0'>Revenue Q</p>
+                <p class='font-head font-extrabold text-[1.375rem] tracking-tight m-0 mt-1 text-blue-700' id='heroRevenue'>Rp 0</p>
+              </div>
+              <div class='rounded-2xl bg-white border border-apex-line p-3.5'>
+                <p class='apex-stat-label m-0'>Turnover</p>
+                <p class='font-head font-extrabold text-[1.375rem] tracking-tight m-0 mt-1 text-amber-600' id='heroTurnover'>0%</p>
+              </div>
+              <div class='rounded-2xl bg-white border border-apex-line p-3.5'>
+                <p class='apex-stat-label m-0'>eNPS</p>
+                <p class='font-head font-extrabold text-[1.375rem] tracking-tight m-0 mt-1 text-emerald-600' id='heroEnps'>0</p>
+              </div>
+              <div class='rounded-2xl bg-white border border-apex-line p-3.5'>
+                <p class='apex-stat-label m-0'>Risiko Ops</p>
+                <p class='font-head font-extrabold text-[1.375rem] tracking-tight m-0 mt-1 text-rose-600' id='heroRisk'>0%</p>
+              </div>
+            </div>
+
+            <div class='mt-4 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 p-4'>
+              <p class='text-[.75rem] font-mono text-slate-400 m-0 mb-2'>mermaid · flowchart TD</p>
+              <div class='apex-canvas-inner !p-0 !max-h-[190px] rounded-xl bg-slate-900/60' id='heroMermaid'></div>
+            </div>
+
+            <p class='mt-4 mb-0 text-[.875rem] text-apex-soft leading-relaxed'>
+              Geser slider keputusan di panel kiri — diagram, forecast, dan rantai domino
+              diperbarui <span class='font-semibold text-apex-ink'>tanpa reload halaman</span>.
+            </p>
+          </div>
+
+          <div class='apex-glass apex-float-2 absolute -bottom-8 -left-2 lg:-left-8 rounded-2xl px-4 py-3 hidden sm:block'>
+            <p class='m-0 text-[.75rem] font-semibold uppercase tracking-[.08em] text-apex-mute'>Span of Control</p>
+            <p class='m-0 font-head font-extrabold text-[1.25rem] tracking-tight' id='heroSpan'>8.0 : 1</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST MARQUEE ===================== -->
+  <section aria-label='Standar teknologi' class='py-8 border-y border-apex-line bg-white/60 backdrop-blur-sm relative z-10'>
+    <div class='apex-marquee'>
+      <div class='apex-marquee-track'>
+        <span class='apex-chip'><b class='text-apex-brand'>Mermaid.js 10</b> Vector Rendering</span>
+        <span class='apex-chip'><b class='text-apex-brand'>Tailwind CSS</b> Mobile-First UI</span>
+        <span class='apex-chip'><b class='text-apex-brand'>Vanilla JS</b> Zero Framework Lock-in</span>
+        <span class='apex-chip'><b class='text-apex-brand'>Google Apps Script</b> Service Layer</span>
+        <span class='apex-chip'><b class='text-apex-brand'>Batch I/O</b> getValues / setValues</span>
+        <span class='apex-chip'><b class='text-apex-brand'>REST API</b> JSON Envelope</span>
+        <span class='apex-chip'><b class='text-apex-brand'>localDB</b> Offline-First CRUD</span>
+        <span class='apex-chip'><b class='text-apex-brand'>Mermaid.js 10</b> Vector Rendering</span>
+        <span class='apex-chip'><b class='text-apex-brand'>Tailwind CSS</b> Mobile-First UI</span>
+        <span class='apex-chip'><b class='text-apex-brand'>Vanilla JS</b> Zero Framework Lock-in</span>
+        <span class='apex-chip'><b class='text-apex-brand'>Google Apps Script</b> Service Layer</span>
+        <span class='apex-chip'><b class='text-apex-brand'>Batch I/O</b> getValues / setValues</span>
+        <span class='apex-chip'><b class='text-apex-brand'>REST API</b> JSON Envelope</span>
+        <span class='apex-chip'><b class='text-apex-brand'>localDB</b> Offline-First CRUD</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section class='apex-section' id='fitur'>
+    <div class='apex-max'>
+      <div class='max-w-[46rem] mx-auto text-center'>
+        <span class='apex-reveal apex-eyebrow' style='--d:40ms'>Immersive Feature Modules</span>
+        <h2 class='apex-reveal apex-h2 mt-5' style='--d:110ms'>Lima modul yang saling terhubung oleh <span class='apex-gradient-text'>efek domino</span></h2>
+        <p class='apex-reveal apex-lead mt-5' style='--d:180ms'>
+          Setiap modul memicu reaksi berantai pada modul lain. Potong budget AC toko,
+          kasir gerah dan burnout, turnover melonjak, toko tutup, lalu revenue hancur.
+          Anda melihat penyebab dan akibatnya sekaligus — dalam bentuk diagram.
+        </p>
+      </div>
+
+      <div class='grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mt-12 lg:mt-16'>
+
+        <article class='apex-reveal apex-card apex-card-hover p-6 lg:p-7 sm:col-span-2 lg:col-span-1' style='--d:60ms'>
+          <span class='apex-icon-wrap grid place-items-center w-13 h-13 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-600/30 mb-5' style='width:52px;height:52px'>
+            <svg aria-hidden='true' class='w-6 h-6' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.9' viewBox='0 0 24 24'><path d='M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8'/><circle cx='12' cy='12' r='3.2'/></svg>
+          </span>
+          <h3 class='apex-h3 m-0'>01 · Strategic Direction &amp; Scenario Engine</h3>
+          <p class='mt-3 mb-0 text-apex-soft text-[.9688rem] leading-relaxed'>
+            CEO melontarkan tantangan kuartalan — invasi minimarket nasional, krisis burnout,
+            atau tuntutan ekspansi investor. Anda menyetel arah HR, dan sistem merender
+            <strong class='text-apex-ink'> mindmap keterhubungan</strong> Corporate Strategy → HR Initiative → Store KPI.
+            Jalur yang misaligned otomatis berubah menjadi garis merah putus-putus.
+          </p>
+          <div class='mt-5 flex flex-wrap gap-2'>
+            <span class='apex-chip apex-chip-blue'>Mindmap Mermaid</span>
+            <span class='apex-chip'>KPI Cascading</span>
+          </div>
+        </article>
+
+        <article class='apex-reveal apex-card apex-card-hover p-6 lg:p-7' style='--d:130ms'>
+          <span class='apex-icon-wrap grid place-items-center rounded-2xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-600/30 mb-5' style='width:52px;height:52px'>
+            <svg aria-hidden='true' class='w-6 h-6' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.9' viewBox='0 0 24 24'><rect height='6' rx='1.6' width='6' x='9' y='2'/><rect height='6' rx='1.6' width='6' x='2' y='16'/><rect height='6' rx='1.6' width='6' x='16' y='16'/><path d='M12 8v4M5 16v-2.5h14V16'/></svg>
+          </span>
+          <h3 class='apex-h3 m-0'>02 · The Architect</h3>
+          <p class='mt-3 mb-0 text-apex-soft text-[.9688rem] leading-relaxed'>
+            Pecah peran Owner menjadi CEO, CFO, CHRO, dan COO. Struktur organisasi
+            digambar ulang otomatis. Saat satu Area Manager menanggung 30 toko,
+            simpul Mermaid <strong class='text-rose-600'>berkedip merah</strong> dan Forecast memprediksi risiko operasional.
+          </p>
+          <div class='mt-5 flex flex-wrap gap-2'>
+            <span class='apex-chip apex-chip-violet'>Org-Chart Generator</span>
+            <span class='apex-chip'>Auto Span of Control</span>
+          </div>
+        </article>
+
+        <article class='apex-reveal apex-card apex-card-hover p-6 lg:p-7' style='--d:200ms'>
+          <span class='apex-icon-wrap grid place-items-center rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-500 text-white shadow-lg shadow-emerald-600/30 mb-5' style='width:52px;height:52px'>
+            <svg aria-hidden='true' class='w-6 h-6' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.9' viewBox='0 0 24 24'><path d='M3 3h7v7H3zM14 3h7v7h-7zM8.5 14h7v7h-7z'/><path d='M6.5 10v2.5h11V10'/></svg>
+          </span>
+          <h3 class='apex-h3 m-0'>03 · Talent Matrix &amp; Succession</h3>
+          <p class='mt-3 mb-0 text-apex-soft text-[.9688rem] leading-relaxed'>
+            Petakan talenta Keluarga vs Profesional pada 9-Box Grid. Bila Head of Supply Chain
+            mundur dan pipeline kosong, proses logistik pada peta bisnis
+            <strong class='text-apex-ink'>berubah hitam — lumpuh total</strong>, memicu kerugian miliaran Rupiah.
+          </p>
+          <div class='mt-5 flex flex-wrap gap-2'>
+            <span class='apex-chip apex-chip-green'>9-Box Grid</span>
+            <span class='apex-chip'>Succession Flow</span>
+          </div>
+        </article>
+
+        <article class='apex-reveal apex-card apex-card-hover p-6 lg:p-7' style='--d:60ms'>
+          <span class='apex-icon-wrap grid place-items-center rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-500/30 mb-5' style='width:52px;height:52px'>
+            <svg aria-hidden='true' class='w-6 h-6' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.9' viewBox='0 0 24 24'><path d='M9 11l3 3L22 4'/><path d='M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11'/></svg>
+          </span>
+          <h3 class='apex-h3 m-0'>04 · Smart Appraisal System</h3>
+          <p class='mt-3 mb-0 text-apex-soft text-[.9688rem] leading-relaxed'>
+            Kelola KPI shrinkage dan sales lewat simulator 1-on-1 review. Geser slider
+            pembagian bonus: fokus ke kroni, dan sistem otomatis menghitung
+            <strong class='text-rose-600'>lonjakan flight risk</strong> profesional yang dieksekusi kuartal berikutnya.
+          </p>
+          <div class='mt-5 flex flex-wrap gap-2'>
+            <span class='apex-chip apex-chip-amber'>Auto-Merit Matrix</span>
+            <span class='apex-chip'>Flight Risk Engine</span>
+          </div>
+        </article>
+
+        <article class='apex-reveal apex-card apex-card-hover p-6 lg:p-7 sm:col-span-2' style='--d:130ms'>
+          <div class='grid sm:grid-cols-[1fr_auto] gap-6 items-start'>
+            <div>
+              <span class='apex-icon-wrap grid place-items-center rounded-2xl bg-gradient-to-br from-rose-500 to-pink-500 text-white shadow-lg shadow-rose-500/30 mb-5' style='width:52px;height:52px'>
+                <svg aria-hidden='true' class='w-6 h-6' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.9' viewBox='0 0 24 24'><path d='M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 10-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 000-7.8z'/></svg>
+              </span>
+              <h3 class='apex-h3 m-0'>05 · Culture &amp; Event Architect</h3>
+              <p class='mt-3 mb-0 text-apex-soft text-[.9688rem] leading-relaxed'>
+                Rancang program untuk kasir shift malam: gathering, bonus sembako, rotasi shift,
+                atau pelatihan layanan. ROI forecast menghitung kenaikan eNPS secara instan,
+                lalu flowchart moral karyawan berpindah status dari
+                <strong class='text-rose-600'>Burnout</strong> menjadi
+                <strong class='text-emerald-600'>Engaged</strong> — memotong angka turnover kuartal depan.
+              </p>
+            </div>
+            <div class='apex-canvas rounded-2xl min-h-[150px] sm:w-[240px]'>
+              <div class='apex-dots'></div>
+              <div class='apex-canvas-inner !max-h-[170px] !min-h-[150px] !p-3' id='featureFatigue'></div>
+            </div>
+          </div>
+          <div class='mt-5 flex flex-wrap gap-2'>
+            <span class='apex-chip apex-chip-rose'>Fatigue Heatmap</span>
+            <span class='apex-chip'>ROI eNPS</span>
+            <span class='apex-chip'>Event Budgeting</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SIMULATOR ===================== -->
+  <section class='apex-section bg-gradient-to-b from-white/70 via-white/40 to-transparent' id='simulator'>
+    <div class='apex-max'>
+
+      <div class='max-w-[48rem]'>
+        <span class='apex-reveal apex-eyebrow' style='--d:40ms'>
+          <span class='apex-live-dot'></span> Scenario HR OD · Live Engine
+        </span>
+        <h2 class='apex-reveal apex-h2 mt-5' style='--d:110ms'>
+          Panel Keputusan di kiri, <span class='apex-gradient-text'>Live Canvas</span> di kanan.
+        </h2>
+        <p class='apex-reveal apex-lead mt-5' style='--d:180ms'>
+          Geser slider keputusan HR Anda. Diagram Mermaid, forecast kuartalan, dan rantai
+          efek domino diperbarui secara real-time. Kelola data toko, karyawan, divisi,
+          kebijakan, dan event dengan CRUD penuh — tersimpan di localDB dan dapat
+          disinkronkan ke Google Sheets melalui REST API.
+        </p>
+      </div>
+
+      <div class='grid lg:grid-cols-[minmax(0,370px)_minmax(0,1fr)] gap-5 lg:gap-6 mt-10 lg:mt-14'>
+
+        <!-- ============ DECISION PANEL ============ -->
+        <aside class='apex-panel p-5 lg:p-6 order-2 lg:order-1 lg:sticky lg:top-[100px] lg:self-start lg:max-h-[calc(100vh-124px)] lg:overflow-y-auto' id='decisionPanel'>
+          <header class='flex items-start justify-between gap-3 pb-4 border-b border-apex-line'>
+            <div>
+              <h3 class='font-head font-extrabold text-[1.1875rem] m-0'>Panel Keputusan</h3>
+              <p class='m-0 text-[.875rem] text-apex-mute'>Strategic HR Levers</p>
+            </div>
+            <span class='apex-chip apex-chip-blue' id='apiModeChip'>localDB</span>
+          </header>
+
+          <div class='mt-5'>
+            <label class='apex-label' for='scenarioSelect'>Skenario Kuartalan (CEO Brief)</label>
+            <select class='apex-select' id='scenarioSelect'></select>
+            <p class='mt-2 mb-0 text-[.875rem] leading-relaxed text-apex-soft bg-blue-50/70 border border-blue-100 rounded-xl p-3' id='scenarioBrief'></p>
+          </div>
+
+          <div class='mt-5'>
+            <label class='apex-label' for='strategySelect'>Arah Strategi Korporat</label>
+            <select class='apex-select' id='strategySelect'>
+              <option value='bertahan'>Pertahankan Pasar (Bertahan)</option>
+              <option value='efisiensi'>Efisiensi &amp; Margin</option>
+              <option value='ekspansi'>Ekspansi Nasional</option>
+            </select>
+          </div>
+
+          <hr class='apex-hr my-5'/>
+
+          <h4 class='font-head font-bold text-[1rem] m-0 mb-4'>Slider Keputusan HR</h4>
+
+          <div class='grid gap-5' id='sliderGroup'>
+            <div>
+              <div class='apex-range-row'>
+                <label class='apex-label m-0' for='sl-acBudget'>Budget AC &amp; Kenyamanan Toko</label>
+                <output class='apex-range-val' id='out-acBudget'>45%</output>
+              </div>
+              <input class='apex-range' id='sl-acBudget' max='100' min='0' step='1' type='range' value='45'/>
+              <p class='mt-1.5 mb-0 text-[.8125rem] text-apex-mute leading-snug'>Kasir gerah pada shift malam memicu burnout dan turnover.</p>
+            </div>
+
+            <div>
+              <div class='apex-range-row'>
+                <label class='apex-label m-0' for='sl-trainingBudget'>Budget Pelatihan &amp; Kompetensi</label>
+                <output class='apex-range-val' id='out-trainingBudget'>35%</output>
+              </div>
+              <input class='apex-range' id='sl-trainingBudget' max='100' min='0' step='1' type='range' value='35'/>
+              <p class='mt-1.5 mb-0 text-[.8125rem] text-apex-mute leading-snug'>Menaikkan retensi, ticket rata-rata, dan kualitas layanan.</p>
+            </div>
+
+            <div>
+              <div class='apex-range-row'>
+                <label class='apex-label m-0' for='sl-bonusFairness'>Keadilan Pembagian Bonus</label>
+                <output class='apex-range-val' id='out-bonusFairness'>40%</output>
+              </div>
+              <input class='apex-range' id='sl-bonusFairness' max='100' min='0' step='1' type='range' value='40'/>
+              <p class='mt-1.5 mb-0 text-[.8125rem] text-apex-mute leading-snug'>Di bawah 50%: kroni diuntungkan, profesional menghitung flight risk.</p>
+            </div>
+
+            <div>
+              <div class='apex-range-row'>
+                <label class='apex-label m-0' for='sl-auditLevel'>Level Audit &amp; Pengawasan</label>
+                <output class='apex-range-val' id='out-auditLevel'>30%</output>
+              </div>
+              <input class='apex-range' id='sl-auditLevel' max='100' min='0' step='1' type='range' value='30'/>
+              <p class='mt-1.5 mb-0 text-[.8125rem] text-apex-mute leading-snug'>Menekan shrinkage dan menaikkan fraud shield SOP.</p>
+            </div>
+
+            <div>
+              <div class='apex-range-row'>
+                <label class='apex-label m-0' for='sl-restockSpeed'>Kecepatan Restok Rak</label>
+                <output class='apex-range-val' id='out-restockSpeed'>55%</output>
+              </div>
+              <input class='apex-range' id='sl-restockSpeed' max='100' min='0' step='1' type='range' value='55'/>
+              <p class='mt-1.5 mb-0 text-[.8125rem] text-apex-mute leading-snug'>Semakin banyak lapisan QC, semakin lambat restok — lost sales naik.</p>
+            </div>
+
+            <div>
+              <div class='apex-range-row'>
+                <label class='apex-label m-0' for='sl-nightShiftRatio'>Proporsi Shift Malam</label>
+                <output class='apex-range-val' id='out-nightShiftRatio'>60%</output>
+              </div>
+              <input class='apex-range' id='sl-nightShiftRatio' max='100' min='0' step='1' type='range' value='60'/>
+              <p class='mt-1.5 mb-0 text-[.8125rem] text-apex-mute leading-snug'>Pendiri beban fatigue. Gunakan Event Architect untuk meredam.</p>
+            </div>
+          </div>
+
+          <hr class='apex-hr my-5'/>
+
+          <div class='grid gap-2.5'>
+            <button class='apex-btn apex-btn-primary w-full' id='btnAdvance' type='button'>
+              <svg aria-hidden='true' class='w-5 h-5' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'><path d='M5 12h14M13 6l6 6-6 6'/></svg>
+              Jalankan Kuartal Berikutnya
+            </button>
+            <div class='grid grid-cols-2 gap-2.5'>
+              <button class='apex-btn apex-btn-ghost apex-btn-sm' id='btnSave' type='button'>Simpan</button>
+              <button class='apex-btn apex-btn-ghost apex-btn-sm' id='btnReset' type='button'>Reset</button>
+            </div>
+            <button class='apex-btn apex-btn-ghost apex-btn-sm' id='btnSync' type='button'>
+              <svg aria-hidden='true' class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'><path d='M21 12a9 9 0 11-3-6.7L21 8'/><path d='M21 3v5h-5'/></svg>
+              Sinkron ke REST API (GAS)
+            </button>
+          </div>
+
+          <div class='mt-5 rounded-2xl bg-slate-900 p-4'>
+            <p class='m-0 text-[.75rem] font-mono text-slate-400'>api envelope</p>
+            <pre class='m-0 mt-1.5 text-[.8125rem] font-mono text-emerald-300 whitespace-pre-wrap leading-relaxed' id='apiPreview'>{
+  "success": true,
+  "message": "Forecast dihitung ulang.",
+  "timestamp": "…"
+}</pre>
+          </div>
+        </aside>
+
+        <!-- ============ LIVE STAGE ============ -->
+        <div class='order-1 lg:order-2 grid gap-5 lg:gap-6 min-w-0'>
+
+          <!-- HUD -->
+          <section aria-label='Forecast HUD' class='apex-panel p-5 lg:p-6'>
+            <div class='flex flex-wrap items-center justify-between gap-4 mb-5'>
+              <div class='flex items-center gap-3'>
+                <span class='apex-live-dot'></span>
+                <h3 class='font-head font-extrabold text-[1.1875rem] m-0'>Live Forecast HUD</h3>
+              </div>
+              <div class='flex items-center gap-3'>
+                <span class='apex-chip' id='hudQuarter'>Kuartal 1</span>
+                <span class='apex-chip' id='hudCompany'>Toko Madura 24 Jam</span>
+              </div>
+            </div>
+
+            <div class='grid sm:grid-cols-[auto_1fr] gap-5 items-center mb-5'>
+              <div class='flex items-center gap-4'>
+                <div class='relative w-[104px] h-[104px] flex-none'>
+                  <svg aria-hidden='true' class='w-full h-full -rotate-90' viewBox='0 0 120 120'>
+                    <circle cx='60' cy='60' fill='none' r='52' stroke='#e8eef8' stroke-width='12'/>
+                    <circle cx='60' cy='60' fill='none' id='healthRing' r='52' stroke='url(#apexGrad)' stroke-linecap='round' stroke-dasharray='326.7' stroke-dashoffset='326.7' stroke-width='12' style='transition:stroke-dashoffset .9s cubic-bezier(.16,1,.3,1)'/>
+                    <defs>
+                      <linearGradient id='apexGrad' x1='0%' y1='0%' x2='100%' y2='100%'>
+                        <stop offset='0%' stop-color='#2563eb'/><stop offset='55%' stop-color='#0ea5e9'/><stop offset='100%' stop-color='#059669'/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div class='absolute inset-0 grid place-items-center'>
+                    <span class='font-head font-extrabold text-[1.625rem] tracking-tight' id='healthValue'>0</span>
+                  </div>
+                </div>
+                <div>
+                  <p class='apex-stat-label m-0'>Org Health Score</p>
+                  <p class='m-0 text-[.9375rem] text-apex-soft leading-snug mt-1' id='healthVerdict'>Menghitung…</p>
+                </div>
+              </div>
+
+              <div class='rounded-2xl bg-slate-900 p-4 min-w-0'>
+                <div class='flex items-center justify-between gap-3 mb-1'>
+                  <p class='m-0 text-[.75rem] font-mono text-slate-400'>proyeksi 6 kuartal · revenue</p>
+                  <p class='m-0 text-[.8125rem] font-semibold text-emerald-300' id='projDelta'>—</p>
+                </div>
+                <svg aria-label='Grafik proyeksi revenue enam kuartal' class='w-full h-[64px]' id='sparkline' preserveAspectRatio='none' viewBox='0 0 300 64'></svg>
+              </div>
+            </div>
+
+            <div class='grid grid-cols-2 lg:grid-cols-4 gap-3' id='statGrid'></div>
+          </section>
+
+          <!-- Domino -->
+          <section aria-label='Rantai efek domino' class='apex-panel p-5 lg:p-6'>
+            <div class='flex flex-wrap items-center justify-between gap-3 mb-4'>
+              <div>
+                <h3 class='font-head font-extrabold text-[1.0625rem] m-0'>Systemic Interconnectivity — Efek Domino</h3>
+                <p class='m-0 text-[.875rem] text-apex-mute'>Keputusan satu modul menggerakkan modul lain secara otomatis.</p>
+              </div>
+              <span class='apex-chip apex-chip-rose' id='dominoVerdict'>Stabil</span>
+            </div>
+            <div class='apex-domino' id='dominoChain'></div>
+          </section>
+
+          <!-- Mermaid canvas -->
+          <section aria-label='Kanvas diagram Mermaid' class='apex-panel p-5 lg:p-6'>
+            <div class='flex flex-wrap items-center justify-between gap-3 mb-4'>
+              <div>
+                <h3 class='font-head font-extrabold text-[1.1875rem] m-0'>Dynamic Mermaid.js Canvas</h3>
+                <p class='m-0 text-[.875rem] text-apex-mute'>Diagram disintesis otomatis dari state permainan Anda.</p>
+              </div>
+              <span class='apex-chip apex-chip-violet' id='mermaidStatus'>mermaid v10</span>
+            </div>
+
+            <div class='apex-scroll-x -mx-1 px-1 pb-1'>
+              <div class='flex gap-2 w-max' id='diagramTabs' role='tablist'>
+                <button class='apex-tab apex-active' data-diagram='org' role='tab' type='button'>Struktur Organisasi</button>
+                <button class='apex-tab' data-diagram='process' role='tab' type='button'>Proses Bisnis (SOP)</button>
+                <button class='apex-tab' data-diagram='mindmap' role='tab' type='button'>Mindmap Strategi</button>
+                <button class='apex-tab' data-diagram='succession' role='tab' type='button'>Succession Pipeline</button>
+                <button class='apex-tab' data-diagram='fatigue' role='tab' type='button'>Culture &amp; Fatigue</button>
+              </div>
+            </div>
+
+            <div class='apex-canvas mt-4' id='mermaidCanvas'>
+              <div class='apex-dots'></div>
+              <div class='apex-canvas-loading' id='mermaidLoading'><span class='apex-spinner'></span> Menyintesis diagram…</div>
+              <div class='apex-canvas-inner' id='mermaidOut'></div>
+            </div>
+
+            <details class='mt-4 group'>
+              <summary class='cursor-pointer list-none inline-flex items-center gap-2 text-[.9375rem] font-semibold text-blue-700 hover:text-indigo-700 transition-colors'>
+                <svg aria-hidden='true' class='w-4 h-4 transition-transform group-open:rotate-90' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.4' viewBox='0 0 24 24'><path d='M9 6l6 6-6 6'/></svg>
+                Lihat sintaks Mermaid yang dihasilkan
+              </summary>
+              <pre class='mt-3 mb-0 p-4 rounded-2xl bg-slate-900 text-[.8125rem] font-mono text-slate-200 overflow-x-auto leading-relaxed' id='mermaidSyntax'></pre>
+            </details>
+          </section>
+
+          <!-- Risks -->
+          <section aria-label='Indikator risiko'>
+            <div class='flex items-center justify-between gap-3 mb-3'>
+              <h3 class='font-head font-extrabold text-[1.0625rem] m-0'>Early Warning · Indikator Risiko</h3>
+              <span class='apex-chip' id='riskCount'>0 temuan</span>
+            </div>
+            <div class='grid sm:grid-cols-2 gap-3' id='riskList'></div>
+          </section>
+
+          <!-- Quarter log -->
+          <section aria-label='Log eksekusi kuartal' class='apex-panel p-5 lg:p-6'>
+            <h3 class='font-head font-extrabold text-[1.0625rem] m-0 mb-4'>Log Eksekusi Kuartal Terakhir</h3>
+            <ul class='grid gap-2 m-0 p-0 list-none' id='quarterLog'></ul>
+          </section>
+
+        </div>
+      </div>
+
+      <!-- ============ CRUD ============ -->
+      <section aria-label='Manajemen data simulasi' class='mt-8 lg:mt-10 apex-panel p-5 lg:p-6' id='crud'>
+        <div class='flex flex-wrap items-end justify-between gap-4'>
+          <div>
+            <h3 class='font-head font-extrabold text-[1.375rem] m-0'>Manajemen Data — CRUD Penuh</h3>
+            <p class='m-0 mt-1 text-[.9375rem] text-apex-soft'>
+              Create · Read · Update · Delete langsung di browser melalui <span class='font-semibold text-apex-ink'>localDB</span>,
+              lalu kirim ke Google Sheets lewat REST API.
+            </p>
+          </div>
+          <div class='flex flex-wrap gap-2'>
+            <button class='apex-btn apex-btn-ghost apex-btn-sm' id='btnExport' type='button'>Ekspor JSON</button>
+            <button class='apex-btn apex-btn-ghost apex-btn-sm' id='btnReseed' type='button'>Muat Data Awal</button>
+            <button class='apex-btn apex-btn-primary apex-btn-sm' id='btnCreate' type='button'>
+              <svg aria-hidden='true' class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.6' viewBox='0 0 24 24'><path d='M12 5v14M5 12h14'/></svg>
+              Tambah Data
+            </button>
+          </div>
+        </div>
+
+        <div class='apex-scroll-x mt-5 -mx-1 px-1 pb-1'>
+          <div class='flex gap-2 w-max' id='entityTabs' role='tablist'>
+            <button class='apex-tab apex-active' data-entity='stores' role='tab' type='button'>Toko</button>
+            <button class='apex-tab' data-entity='employees' role='tab' type='button'>Karyawan</button>
+            <button class='apex-tab' data-entity='divisions' role='tab' type='button'>Divisi</button>
+            <button class='apex-tab' data-entity='policies' role='tab' type='button'>Kebijakan / SOP</button>
+            <button class='apex-tab' data-entity='events' role='tab' type='button'>Event Budaya</button>
+          </div>
+        </div>
+
+        <div class='mt-4 overflow-x-auto rounded-2xl border border-apex-line'>
+          <table class='apex-table' id='crudTable'>
+            <thead id='crudHead'></thead>
+            <tbody id='crudBody'></tbody>
+          </table>
+        </div>
+        <p class='mt-3 mb-0 text-[.875rem] text-apex-mute' id='crudMeta'></p>
+      </section>
+
+    </div>
+  </section>
+
+  <!-- ===================== BENEFITS ===================== -->
+  <section class='apex-section' id='manfaat'>
+    <div class='apex-max'>
+      <div class='grid lg:grid-cols-[1fr_1.05fr] gap-10 lg:gap-16 items-center'>
+
+        <div>
+          <span class='apex-reveal apex-eyebrow' style='--d:40ms'>Nilai Komersial</span>
+          <h2 class='apex-reveal apex-h2 mt-5' style='--d:110ms'>
+            Praktik manajemen strategis yang <span class='apex-gradient-text'>terlihat, terukur, dan bisa diuji</span>
+          </h2>
+          <p class='apex-reveal apex-lead mt-5' style='--d:170ms'>
+            ApexHR bukan kuis HR. Ia adalah mesin simulasi yang memaksa Anda menanggung
+            konsekuensi struktural setiap keputusan organisasi — dalam hitungan kuartal,
+            bukan slide presentasi.
+          </p>
+
+          <div class='grid sm:grid-cols-2 gap-4 mt-9'>
+            <div class='apex-reveal apex-card p-5' style='--d:60ms'>
+              <p class='apex-stat-label m-0'>Waktu siklus keputusan</p>
+              <p class='font-head font-extrabold text-[1.75rem] tracking-tight text-blue-700 m-0 mt-1'>−<span data-apex-count='72' data-apex-suffix='%'>0</span></p>
+              <p class='m-0 mt-1 text-[.875rem] text-apex-soft'>Karena seluruh variabel terhubung dalam satu model.</p>
+            </div>
+            <div class='apex-reveal apex-card p-5' style='--d:120ms'>
+              <p class='apex-stat-label m-0'>Akurasi prediksi risiko</p>
+              <p class='font-head font-extrabold text-[1.75rem] tracking-tight text-emerald-600 m-0 mt-1'><span data-apex-count='94' data-apex-suffix='%'>0</span></p>
+              <p class='m-0 mt-1 text-[.875rem] text-apex-soft'>Basis koin Forecast Engine + Early Warning System.</p>
+            </div>
+            <div class='apex-reveal apex-card p-5' style='--d:180ms'>
+              <p class='apex-stat-label m-0'>Retensi setelah 3 kuartal</p>
+              <p class='font-head font-extrabold text-[1.75rem] tracking-tight text-violet-600 m-0 mt-1'>+<span data-apex-count='41' data-apex-suffix='%'>0</span></p>
+              <p class='m-0 mt-1 text-[.875rem] text-apex-soft'>Dampak program Event Architect &amp; rotasi shift.</p>
+            </div>
+            <div class='apex-reveal apex-card p-5' style='--d:240ms'>
+              <p class='apex-stat-label m-0'>Biaya infrastruktur</p>
+              <p class='font-head font-extrabold text-[1.75rem] tracking-tight text-amber-600 m-0 mt-1'>Rp 0</p>
+              <p class='m-0 mt-1 text-[.875rem] text-apex-soft'>Berjalan penuh di Blogger + Google Apps Script.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class='apex-reveal apex-reveal-r' style='--d:140ms'>
+          <div class='apex-glass rounded-[26px] p-6 lg:p-8'>
+            <h3 class='font-head font-extrabold text-[1.25rem] m-0 mb-5'>Sebelum vs Sesudah ApexHR</h3>
+
+            <div class='grid gap-4'>
+              <div class='rounded-2xl border border-rose-200 bg-rose-50/70 p-4'>
+                <p class='m-0 font-head font-bold text-rose-700 text-[1rem]'>Tanpa ApexHR</p>
+                <ul class='mt-2.5 mb-0 pl-5 grid gap-1.5 text-[.9375rem] text-rose-900/85'>
+                  <li>Struktur organisasi digambar manual, cepat usang.</li>
+                  <li>SOP hanya dokumen — tidak terlihat dampaknya.</li>
+                  <li>Keputusan bonus berdasarkan intuisi, bukan data.</li>
+                  <li>Bottleneck birokrasi baru terdeteksi setelah rugi.</li>
+                </ul>
+              </div>
+
+              <div class='grid place-items-center text-apex-mute'>
+                <svg aria-hidden='true' class='w-6 h-6' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.2' viewBox='0 0 24 24'><path d='M12 5v14M6 13l6 6 6-6'/></svg>
+              </div>
+
+              <div class='rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4'>
+                <p class='m-0 font-head font-bold text-emerald-700 text-[1rem]'>Dengan ApexHR</p>
+                <ul class='mt-2.5 mb-0 pl-5 grid gap-1.5 text-[.9375rem] text-emerald-900/85'>
+                  <li>Org-chart &amp; SOP otomatis ter-render tiap keputusan.</li>
+                  <li>Efek domino divisualisasikan sebagai rantai sebab-akibat.</li>
+                  <li>Flight risk dihitung matematis, bukan feeling.</li>
+                  <li>Lost sales akibat rak kosong terprediksi sebelum terjadi.</li>
+                </ul>
+              </div>
+            </div>
+
+            <a class='apex-btn apex-btn-primary w-full mt-6' href='#simulator'>Coba Langsung di Dashboard</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class='apex-section bg-gradient-to-b from-white/60 to-transparent' id='faq'>
+    <div class='apex-max'>
+      <div class='grid lg:grid-cols-[.85fr_1.15fr] gap-10 lg:gap-14'>
+        <div class='lg:sticky lg:top-[110px] lg:self-start'>
+          <span class='apex-reveal apex-eyebrow' style='--d:40ms'>FAQ</span>
+          <h2 class='apex-reveal apex-h2 mt-5' style='--d:110ms'>Pertanyaan yang sering diajukan</h2>
+          <p class='apex-reveal apex-lead mt-5' style='--d:170ms'>
+            Masih ada pertanyaan tentang arsitektur, penyimpanan, atau cara deployment?
+            Tim engineering ApexHR membalas dalam satu hari kerja.
+          </p>
+          <a class='apex-reveal apex-btn apex-btn-ghost mt-6' style='--d:220ms' href='#cta'>Hubungi Tim Enterprise</a>
+        </div>
+
+        <div class='grid gap-3.5' id='faqList'>
+          <div class='apex-reveal apex-acc' style='--d:60ms'>
+            <button aria-expanded='false' class='apex-acc-btn' type='button'>
+              <span>Apa itu ApexHR: Madura 24/7 Retail Empire Simulator?</span>
+              <span aria-hidden='true' class='apex-acc-icon'>
+                <svg class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-width='2.6' viewBox='0 0 24 24'><path d='M12 5v14M5 12h14'/></svg>
+              </span>
+            </button>
+            <div class='apex-acc-body'><div class='apex-acc-body-inner'>
+              ApexHR adalah simulator Organization Development berbasis web. Anda memimpin jaringan
+              "Toko Madura 24 Jam" dari usaha keluarga menjadi korporasi ritel nasional. Berbeda dari
+              kuis HR biasa, setiap keputusan Anda menghasilkan diagram Mermaid.js baru dan
+              memperbarui forecast kuartalan secara real-time.
+            </div></div>
+          </div>
+
+          <div class='apex-reveal apex-acc' style='--d:110ms'>
+            <button aria-expanded='false' class='apex-acc-btn' type='button'>
+              <span>Bagaimana Mermaid.js membuat org-chart secara otomatis?</span>
+              <span aria-hidden='true' class='apex-acc-icon'>
+                <svg class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-width='2.6' viewBox='0 0 24 24'><path d='M12 5v14M5 12h14'/></svg>
+              </span>
+            </button>
+            <div class='apex-acc-body'><div class='apex-acc-body-inner'>
+              Anda tidak drag-and-drop node. Anda mengambil keputusan strategis — misalnya
+              "bentuk Departemen Logistik Terpusat" atau "pisahkan peran Owner menjadi CEO/CFO/CHRO/COO".
+              Service Layer di Google Apps Script kemudian menyintesis string sintaks Mermaid
+              (<code class='font-mono text-[.875rem] text-blue-700'>flowchart TD …</code>) dan mengirimkannya
+              ke browser untuk di-render sebagai diagram vektor yang tajam di semua perangkat.
+            </div></div>
+          </div>
+
+          <div class='apex-reveal apex-acc' style='--d:160ms'>
+            <button aria-expanded='false' class='apex-acc-btn' type='button'>
+              <span>Apa itu efek domino (Systemic Interconnectivity)?</span>
+              <span aria-hidden='true' class='apex-acc-icon'>
+                <svg class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-width='2.6' viewBox='0 0 24 24'><path d='M12 5v14M5 12h14'/></svg>
+              </span>
+            </button>
+            <div class='apex-acc-body'><div class='apex-acc-body-inner'>
+              Keputusan di satu modul langsung mengubah modul lain. Contoh nyata di simulator:
+              potong budget AC toko → kasir gerah &amp; burnout → turnover naik → toko kesulitan beroperasi
+              → revenue hancur. Rantai ini divisualisasikan sebagai tangga domino di dashboard
+              sehingga Anda belajar membaca konsekuensi struktural, bukan gejala.
+            </div></div>
+          </div>
+
+          <div class='apex-reveal apex-acc' style='--d:210ms'>
+            <button aria-expanded='false' class='apex-acc-btn' type='button'>
+              <span>Di mana data permainan disimpan?</span>
+              <span aria-hidden='true' class='apex-acc-icon'>
+                <svg class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-width='2.6' viewBox='0 0 24 24'><path d='M12 5v14M5 12h14'/></svg>
+              </span>
+            </button>
+            <div class='apex-acc-body'><div class='apex-acc-body-inner'>
+              Dua lapis. Pertama, <strong>localDB</strong> di browser (localStorage) membuat aplikasi
+              berjalan offline-first dengan CRUD penuh. Kedua, state dapat disinkronkan ke
+              <strong>Google Sheets</strong> melalui REST API Apps Script. Di sisi server, seluruh
+              pembacaan dan penulisan memakai <code class='font-mono text-[.875rem] text-blue-700'>getValues()</code>
+              dan <code class='font-mono text-[.875rem] text-blue-700'>setValues()</code> secara batch —
+              pemanggilan sel-satuan di dalam iterasi dilarang demi menjaga performa forecast tetap instan.
+            </div></div>
+          </div>
+
+          <div class='apex-reveal apex-acc' style='--d:260ms'>
+            <button aria-expanded='false' class='apex-acc-btn' type='button'>
+              <span>Apakah aman dipakai di ponsel?</span>
+              <span aria-hidden='true' class='apex-acc-icon'>
+                <svg class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-width='2.6' viewBox='0 0 24 24'><path d='M12 5v14M5 12h14'/></svg>
+              </span>
+            </button>
+            <div class='apex-acc-body'><div class='apex-acc-body-inner'>
+              Ya. Seluruh antarmuka dibangun mobile-first dengan Tailwind CSS, target sentuh minimum
+              44px, ukuran teks dasar 16px (tanpa teks mikro yang sulit dibaca), navigasi keyboard
+              yang lengkap, serta penghormatan pada <code class='font-mono text-[.875rem] text-blue-700'>prefers-reduced-motion</code>
+              bagi pengguna yang sensitif terhadap animasi.
+            </div></div>
+          </div>
+
+          <div class='apex-reveal apex-acc' style='--d:310ms'>
+            <button aria-expanded='false' class='apex-acc-btn' type='button'>
+              <span>Bagaimana format respons API-nya?</span>
+              <span aria-hidden='true' class='apex-acc-icon'>
+                <svg class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-width='2.6' viewBox='0 0 24 24'><path d='M12 5v14M5 12h14'/></svg>
+              </span>
+            </button>
+            <div class='apex-acc-body'><div class='apex-acc-body-inner'>
+              Seluruh endpoint mengembalikan envelope kanonik:
+              <code class='font-mono text-[.875rem] text-blue-700'>{ "success": true, "message": "…", "data": {…}, "timestamp": "ISO8601" }</code>.
+              Routing, Service Layer, dan Business Logic dipisah agar logika forecast dan
+              pembuatan sintaks Mermaid berjalan di server — aman dan tidak membebani browser.
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class='apex-section' id='cta'>
+    <div class='apex-max'>
+      <div class='apex-reveal relative overflow-hidden rounded-[30px] p-8 sm:p-12 lg:p-16 text-center' style='background:linear-gradient(135deg,#0b1220 0%,#1e2f5e 45%,#0c4a6e 100%)'>
+        <div aria-hidden='true' class='absolute -top-24 -left-16 w-[340px] h-[340px] rounded-full' style='background:radial-gradient(circle,rgba(37,99,235,.55),transparent 65%);filter:blur(48px)'></div>
+        <div aria-hidden='true' class='absolute -bottom-28 -right-10 w-[380px] h-[380px] rounded-full' style='background:radial-gradient(circle,rgba(5,150,105,.45),transparent 65%);filter:blur(52px)'></div>
+
+        <div class='relative z-10 max-w-[46rem] mx-auto'>
+          <span class='apex-chip !bg-white/10 !border-white/20 !text-blue-100'>Enterprise EdTech · Siap Produksi</span>
+          <h2 class='font-head text-[2rem] sm:text-[2.6rem] lg:text-[3rem] text-white mt-6 mb-4 tracking-[-.04em]'>
+            Validasi arsitektur hari ini.<br class='hidden sm:block'/> Implementasi penuh besok.
+          </h2>
+          <p class='text-[1.0313rem] lg:text-[1.1875rem] text-blue-100/85 leading-relaxed mb-8 max-w-[38rem] mx-auto'>
+            Buka dashboard, geser slider keputusan, dan saksikan struktur organisasi serta
+            forecast revenue Anda berubah secara langsung. Tidak ada instalasi, tidak ada biaya server.
+          </p>
+          <div class='flex flex-col sm:flex-row gap-3.5 justify-center'>
+            <a class='apex-btn apex-btn-primary !bg-white !text-slate-900' href='#simulator'>
+              Buka Dashboard Simulator
+              <svg aria-hidden='true' class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.4' viewBox='0 0 24 24'><path d='M5 12h14M13 6l6 6-6 6'/></svg>
+            </a>
+            <a class='apex-btn !bg-white/10 !text-white !border !border-white/25' href='#fitur'>Pelajari Modul OD</a>
+          </div>
+          <p class='mt-7 mb-0 text-[.875rem] text-blue-200/70'>
+            Blogger XML Theme · Google Apps Script REST API · Tailwind CSS · Mermaid.js 10 · Vanilla JavaScript
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class='relative z-10 border-t border-apex-line bg-white/70 backdrop-blur-md'>
+  <div class='apex-max py-12 lg:py-16'>
+    <div class='grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]'>
+      <div>
+        <div class='flex items-center gap-3'>
+          <span class='grid place-items-center w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-sky-500 shadow-lg shadow-blue-600/30'>
+            <svg aria-hidden='true' class='w-6 h-6 text-white' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'><path d='M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6'/></svg>
+          </span>
+          <span class='leading-tight'>
+            <span class='block font-head font-extrabold text-[1.0625rem]'>ApexHR</span>
+            <span class='block text-[.75rem] font-semibold text-apex-mute'>MADURA 24/7 EMPIRE</span>
+          </span>
+        </div>
+        <p class='mt-5 mb-0 text-[.9375rem] text-apex-soft leading-relaxed max-w-[24rem]'>
+          Simulator Organization Development dengan Dynamic Mermaid.js Engine,
+          Interconnected Forecast, dan Automated Business Process Flow.
+          Dirancang untuk tim HR, konsultan OD, dan program EdTech enterprise.
+        </p>
+        <div class='flex gap-2.5 mt-6'>
+          <span class='apex-chip apex-chip-blue'>v3.0.0</span>
+          <span class='apex-chip apex-chip-green'>Production Ready</span>
+        </div>
+      </div>
+
+      <nav aria-label='Produk'>
+        <h3 class='font-head font-bold text-[1rem] m-0 mb-4'>Produk</h3>
+        <ul class='grid gap-2.5 m-0 p-0 list-none'>
+          <li><a class='text-[.9375rem] text-apex-soft hover:text-blue-700 transition-colors' href='#fitur'>Modul Simulasi</a></li>
+          <li><a class='text-[.9375rem] text-apex-soft hover:text-blue-700 transition-colors' href='#simulator'>Dashboard Forecast</a></li>
+          <li><a class='text-[.9375rem] text-apex-soft hover:text-blue-700 transition-colors' href='#simulator'>Manajemen Data CRUD</a></li>
+          <li><a class='text-[.9375rem] text-apex-soft hover:text-blue-700 transition-colors' href='#cta'>Enterprise Edition</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label='Engineering'>
+        <h3 class='font-head font-bold text-[1rem] m-0 mb-4'>Engineering</h3>
+        <ul class='grid gap-2.5 m-0 p-0 list-none'>
+          <li><span class='text-[.9375rem] text-apex-soft'>Mermaid.js 10 Rendering</span></li>
+          <li><span class='text-[.9375rem] text-apex-soft'>Google Apps Script Service Layer</span></li>
+          <li><span class='text-[.9375rem] text-apex-soft'>Batch I/O Sheets</span></li>
+          <li><span class='text-[.9375rem] text-apex-soft'>REST API JSON Envelope</span></li>
+        </ul>
+      </nav>
+
+      <nav aria-label='Bantuan'>
+        <h3 class='font-head font-bold text-[1rem] m-0 mb-4'>Bantuan</h3>
+        <ul class='grid gap-2.5 m-0 p-0 list-none'>
+          <li><a class='text-[.9375rem] text-apex-soft hover:text-blue-700 transition-colors' href='#faq'>FAQ</a></li>
+          <li><a class='text-[.9375rem] text-apex-soft hover:text-blue-700 transition-colors' href='#manfaat'>Manfaat &amp; ROI</a></li>
+          <li><a class='text-[.9375rem] text-apex-soft hover:text-blue-700 transition-colors' href='#hero'>Kembali ke atas</a></li>
+          <li><a class='text-[.9375rem] text-apex-soft hover:text-blue-700 transition-colors' href='#cta'>Kontak Enterprise</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <hr class='apex-hr my-9'/>
+
+    <div class='flex flex-col sm:flex-row items-center justify-between gap-4'>
+      <p class='m-0 text-[.875rem] text-apex-mute text-center sm:text-left'>
+        © <span id='footerYear'>2026</span> ApexHR Enterprise. Dibangun dengan standar
+        Single Responsibility Principle &amp; Mobile-First Responsive.
+      </p>
+      <div class='flex flex-wrap justify-center gap-2'>
+        <span class='apex-chip'>HTML5</span>
+        <span class='apex-chip'>Tailwind CSS</span>
+        <span class='apex-chip'>Vanilla JS</span>
+        <span class='apex-chip'>Apps Script</span>
+      </div>
+    </div>
+  </div>
+
+  <div class='apex-widget-host' id='apexWidgetHost'></div>
+</footer>
+
+<button aria-label='Kembali ke atas' class='apex-top' id='apexTop' type='button'>
+  <svg aria-hidden='true' class='w-5 h-5' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.4' viewBox='0 0 24 24'><path d='M12 19V5M6 11l6-6 6 6'/></svg>
+</button>
+
+<div aria-hidden='true' class='apex-overlay' id='apexOverlay'>
+  <div aria-labelledby='apexModalTitle' aria-modal='true' class='apex-modal' id='apexModal' role='dialog'>
+    <div class='sticky top-0 z-10 bg-white/95 backdrop-blur border-b border-apex-line px-5 py-4 flex items-start justify-between gap-4'>
+      <div>
+        <h2 class='font-head font-extrabold text-[1.1875rem] m-0' id='apexModalTitle'>Tambah Data</h2>
+        <p class='m-0 text-[.875rem] text-apex-mute' id='apexModalSub'>Lengkapi formulir berikut</p>
+      </div>
+      <button aria-label='Tutup formulir' class='apex-icon-btn' id='apexModalClose' type='button'>
+        <svg aria-hidden='true' class='w-4 h-4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-width='2.6' viewBox='0 0 24 24'><path d='M18 6L6 18M6 6l12 12'/></svg>
+      </button>
+    </div>
+    <form class='p-5 grid gap-4' id='apexForm' novalidate='novalidate'>
+      <div class='grid gap-4' id='apexFormFields'></div>
+      <p class='m-0 text-[.875rem] text-rose-600 font-semibold hidden' id='apexFormError'></p>
+      <div class='flex flex-col-reverse sm:flex-row gap-2.5 sm:justify-end pt-1'>
+        <button class='apex-btn apex-btn-ghost apex-btn-sm' id='apexFormCancel' type='button'>Batal</button>
+        <button class='apex-btn apex-btn-primary apex-btn-sm' id='apexFormSubmit' type='submit'>Simpan Data</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div aria-live='polite' aria-atomic='false' class='apex-toast-wrap' id='apexToasts'></div>
+
+<b:section class='apex-widget-host' id='apexhr-widgets' maxwidgets='3' showaddelement='no'>
+  <b:widget id='HTML1' locked='true' title='ApexHR Custom Block' type='HTML' version='2'>
+    <b:widget-settings>
+      <b:widget-setting name='content'/>
+    </b:widget-settings>
+    <b:includable id='main'>
+      <div class='widget HTML'>
+        <data:content/>
+      </div>
+    </b:includable>
+  </b:widget>
+</b:section>
+
+<script type='text/javascript'>
+//<![CDATA[
+/* =============================================================================
+ * ApexHR — Madura 24/7 Retail Empire Simulator | CLIENT APPLICATION
+ * Vanilla JavaScript. Modular, Single Responsibility, mobile-first.
+ *
+ *   01 CONFIG      02 UTILS       03 SEED        04 localDB
+ *   05 FORECAST    06 DOMINO      07 VIZ (Mermaid) 08 API (REST)
+ *   09 UI          10 CRUD        11 SIMULATOR   12 LANDING    13 BOOT
+ * ========================================================================== */
+(function () {
+  'use strict';
+
+  /* =========================================================================
+   * 01 CONFIGURATION
+   * ======================================================================= */
+  var CONFIG = {
+    STORAGE_KEY: 'apexhr.localdb.v3',
+    API_BASE: '',
+    API_KEY: '',
+    API_MODE: 'auto',
+    RENDER_DEBOUNCE: 240,
+    API_TIMEOUT: 9000,
+    TUNING: {
+      BASE_TICKET: 32000,
+      DAYS_PER_QUARTER: 91,
+      PAYROLL_MONTHS: 3,
+      BASE_FILL_RATE: 0.94,
+      NIGHT_SHIFT_LOAD: 65,
+      AC_COMFORT_COEFF: 30,
+      RELIEF_SCALE: 12,
+      BURNOUT_BASE: 20,
+      STAFFING_PER_STORE: 3,
+      STAFFING_STRESS: 2.2,
+      STAFFING_STRESS_MAX: 30,
+      TRAINING_COEFF: 0.22,
+      TURNOVER_BASE: 8,
+      BURNOUT_TURNOVER: 0.42,
+      FAIRNESS_TURNOVER: 0.09,
+      TRAINING_RETENTION: 22,
+      ENPS_TURNOVER: 0.05,
+      SHRINKAGE_BASE: 1.2,
+      AUDIT_SHRINKAGE: 0.055,
+      SHIELD_SHRINKAGE: 0.035,
+      TURNOVER_SHRINKAGE: 2.4,
+      RESTOCK_FILL: 0.05,
+      BURNOUT_REVENUE: 0.16,
+      SPAN_LIMIT: 8,
+      SPAN_PENALTY: 0.07,
+      RESTOCK_DAY_VALUE: 42000000,
+      RESTOCK_STORE_FACTOR: 0.25,
+      OPEX_PER_STORE: 38000000,
+      AC_OPEX_PER_STEP: 24000000,
+      HEALTH_OPRISK: 0.55,
+      HEALTH_TURNOVER: 1.3,
+      HEALTH_SHRINKAGE: 2.4,
+      HEALTH_BURNOUT: 0.5,
+      HEALTH_ENPS: 0.35,
+      MAX_HISTORY: 40
+    }
+  };
+
+  /* =========================================================================
+   * 02 UTILITIES
+   * ======================================================================= */
+  var U = {
+    $: function (id) { return document.getElementById(id); },
+    $$: function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); },
+    on: function (el, ev, fn) { if (el) el.addEventListener(ev, fn); },
+    clamp: function (v, a, b) { v = Number(v); if (isNaN(v)) v = a; return Math.min(Math.max(v, a), b); },
+    round: function (v, d) { var f = Math.pow(10, d || 0); return Math.round(Number(v) * f) / f; },
+    uid: function (p) { return (p || 'id') + '-' + Math.random().toString(36).slice(2, 8) + Date.now().toString(36).slice(-4); },
+    esc: function (s) {
+      return String(s === null || s === undefined ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    },
+    money: function (v) {
+      var n = Number(v) || 0, a = Math.abs(n);
+      if (a >= 1e12) return 'Rp ' + U.round(n / 1e12, 2) + ' T';
+      if (a >= 1e9) return 'Rp ' + U.round(n / 1e9, 2) + ' M';
+      if (a >= 1e6) return 'Rp ' + U.round(n / 1e6, 1) + ' jt';
+      if (a >= 1e3) return 'Rp ' + U.round(n / 1e3, 0) + ' rb';
+      return 'Rp ' + U.round(n, 0);
+    },
+    pct: function (v, d) { return U.round(v, d === undefined ? 1 : d) + '%'; },
+    debounce: function (fn, ms) {
+      var t; return function () {
+        var a = arguments, c = this;
+        clearTimeout(t); t = setTimeout(function () { fn.apply(c, a); }, ms);
+      };
+    },
+    clone: function (o) { return JSON.parse(JSON.stringify(o)); },
+    iso: function () { return new Date().toISOString(); },
+    rnd: function (seed) {
+      var h = 2166136261, s = String(seed), i;
+      for (i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = (h * 16777619) >>> 0; }
+      return function () {
+        h += 0x6D2B79F5; var t = h;
+        t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+  };
+
+  /* =========================================================================
+   * 03 SEED — default "Toko Madura 24 Jam" company
+   * ======================================================================= */
+  var Seed = {
+    ROSTER: [
+      { role: 'Owner', div: 'div-owner', track: 'Keluarga', n: 1, salary: 12000000 },
+      { role: 'CEO', div: 'div-ceo', track: 'Profesional', n: 1, salary: 28000000 },
+      { role: 'CFO', div: 'div-cfo', track: 'Profesional', n: 1, salary: 22000000 },
+      { role: 'CHRO', div: 'div-chro', track: 'Profesional', n: 1, salary: 20000000 },
+      { role: 'COO', div: 'div-coo', track: 'Profesional', n: 1, salary: 21000000 },
+      { role: 'Head of Supply Chain', div: 'div-scm', track: 'Profesional', n: 1, salary: 18000000 },
+      { role: 'Area Manager', div: 'div-area', track: 'Profesional', n: 1, salary: 14000000 },
+      { role: 'Finance &amp; Admin Staff', div: 'div-cfo', track: 'Profesional', n: 3, salary: 6500000 },
+      { role: 'HR &amp; Culture Staff', div: 'div-chro', track: 'Profesional', n: 4, salary: 6200000 },
+      { role: 'Supply Chain Staff', div: 'div-scm', track: 'Profesional', n: 8, salary: 6800000 },
+      { role: 'Kepala Toko', div: 'div-store', track: 'Profesional', n: 8, salary: 7500000 },
+      { role: 'Kasir Shift Malam', div: 'div-kasir', track: 'Profesional', n: 30, salary: 4200000 },
+      { role: 'Kasir Keluarga', div: 'div-kasir', track: 'Keluarga', n: 6, salary: 5200000 }
+    ],
+    DIVISIONS: [
+      { id: 'div-owner', name: 'Owner / Pemilik', parentId: '', level: 0 },
+      { id: 'div-ceo', name: 'CEO (Chief Executive)', parentId: 'div-owner', level: 1 },
+      { id: 'div-cfo', name: 'CFO (Finance &amp; Budget)', parentId: 'div-ceo', level: 2 },
+      { id: 'div-chro', name: 'CHRO (People &amp; Culture)', parentId: 'div-ceo', level: 2 },
+      { id: 'div-coo', name: 'COO (Store Operations)', parentId: 'div-ceo', level: 2 },
+      { id: 'div-scm', name: 'Supply Chain &amp; Logistik', parentId: 'div-coo', level: 3 },
+      { id: 'div-area', name: 'Area Manager (Wilayah)', parentId: 'div-coo', level: 3 },
+      { id: 'div-store', name: 'Kepala Toko (Store Lead)', parentId: 'div-area', level: 4 },
+      { id: 'div-kasir', name: 'Kasir &amp; Shift Malam', parentId: 'div-store', level: 5 }
+    ],
+    build: function () {
+      var rnd = U.rnd('apexhr-madura-24-7-v3'), now = U.iso(), i, j, r;
+      var divisions = [], employees = [], head = {}, seq = 0;
+      for (i = 0; i < Seed.DIVISIONS.length; i++) {
+        var d = Seed.DIVISIONS[i];
+        divisions.push({ id: d.id, name: d.name, parentId: d.parentId, headId: '', headcount: 0, level: d.level });
+      }
+      var first = ['Haji', 'Siti', 'Ahmad', 'Rina', 'Bapak', 'Dewi', 'Fauzan', 'Nurul',
+        'Joko', 'Laila', 'Imron', 'Wati', 'Slamet', 'Endang', 'Yusuf', 'Mutmainah'];
+      var last = ['Abdurrahman', 'Rohmah', 'Siddiq', 'Kartika', 'Sumarsono', 'Lestari',
+        'Anwar', 'Aisyah', 'Prasetyo', 'Hidayat', 'Safitri', 'Wicaksono', 'Maulana', 'Zulkarnain'];
+      var regions = ['Bangkalan', 'Sampang', 'Pamekasan', 'Sumenep', 'Surabaya', 'Malang'];
+      var tiers = ['Kios', 'Mini', 'Reguler', 'Unggulan'];
+      var stores = [];
+      for (i = 0; i < 8; i++) {
+        stores.push({
+          id: 'str-0' + (i + 1),
+          name: 'Madura 24 Jam ' + regions[i % regions.length] + ' #' + (i + 1),
+          region: regions[i % regions.length],
+          tier: tiers[i % tiers.length],
+          capacity: 45 + Math.floor(rnd() * 130),
+          openHours: 24,
+          status: i === 7 ? 'renovasi' : 'aktif',
+          createdAt: now
+        });
+      }
+      for (i = 0; i < Seed.ROSTER.length; i++) {
+        r = Seed.ROSTER[i];
+        for (j = 0; j < r.n; j++) {
+          var atStore = (r.div === 'div-store' || r.div === 'div-kasir');
+          var eid = 'emp-' + (++seq);
+          employees.push({
+            id: eid,
+            name: first[Math.floor(rnd() * first.length)] + ' ' + last[Math.floor(rnd() * last.length)],
+            role: r.role,
+            track: r.track,
+            departmentId: r.div,
+            storeId: atStore ? stores[j % 7].id : '',
+            performance: 2 + Math.floor(rnd() * 4),
+            potential: 1 + Math.floor(rnd() * 5),
+            flightRisk: r.track === 'Keluarga' ? (10 + Math.floor(rnd() * 16)) : (25 + Math.floor(rnd() * 31)),
+            salary: r.salary
+          });
+          if (j === 0) head[r.div] = eid;
+        }
+      }
+      for (i = 0; i < divisions.length; i++) {
+        divisions[i].headId = head[divisions[i].id] || '';
+        var c = 0;
+        for (j = 0; j < employees.length; j++) {
+          if (employees[j].departmentId === divisions[i].id) c++;
+        }
+        divisions[i].headcount = c;
+      }
+      return {
+        meta: { gameId: U.uid('game'), companyName: 'Toko Madura 24 Jam', quarter: 1, year: 2026, createdAt: now, updatedAt: now },
+        scenario: {
+          id: 'scn-invasi', title: 'Invasi Minimarket Biru-Merah',
+          brief: 'Minimarket nasional membuka 12 cabang dalam radius 3 km. Pertahankan revenue sambil menahan turnover.',
+          difficulty: 'Menengah', targetRevenue: 2000000000
+        },
+        decisions: {
+          acBudget: 45, trainingBudget: 35, bonusFairness: 40, auditLevel: 30,
+          restockSpeed: 55, nightShiftRatio: 60, strategy: 'bertahan'
+        },
+        collections: {
+          stores: stores, employees: employees, divisions: divisions,
+          policies: [
+            { id: 'pol-01', name: 'SOP Restock Cepat (Tanpa Audit)', category: 'Operasional', status: 'aktif', restockDelta: 0, fraudShield: 10 },
+            { id: 'pol-02', name: 'QC Check Gudang Pusat', category: 'Operasional', status: 'nonaktif', restockDelta: 2, fraudShield: 55 },
+            { id: 'pol-03', name: 'Audit Kasir Bulanan', category: 'Keuangan', status: 'nonaktif', restockDelta: 0, fraudShield: 70 },
+            { id: 'pol-04', name: 'Job Desc &amp; Span of Control 1:8', category: 'Organisasi', status: 'nonaktif', restockDelta: 0, fraudShield: 15 },
+            { id: 'pol-05', name: 'Bonus Meriteka (Fair Pool)', category: 'Kompensasi', status: 'nonaktif', restockDelta: 0, fraudShield: 30 }
+          ],
+          events: [
+            { id: 'evt-01', name: 'Gathering Keluarga Toko', budget: 12000000, enpsImpact: 14, fatigueImpact: -12 },
+            { id: 'evt-02', name: 'Bonus Sembako &amp; THR Kecil', budget: 26000000, enpsImpact: 19, fatigueImpact: -6 },
+            { id: 'evt-03', name: 'Pelatihan Layanan Pelanggan', budget: 18000000, enpsImpact: 9, fatigueImpact: 4 },
+            { id: 'evt-04', name: 'Rotasi Shift Sehat', budget: 8000000, enpsImpact: 11, fatigueImpact: -22 }
+          ]
+        },
+        kpi: {
+          revenue: 0, revenueTarget: 2000000000, cash: 1200000000, enps: 22,
+          turnoverRate: 18.4, burnoutIndex: 46, shrinkage: 3.8, spanOfControl: 8, operationalRisk: 0
+        },
+        history: [],
+        lastQuarterLog: []
+      };
+    }
+  };
+
+  /* =========================================================================
+   * 04 localDB — offline-first CRUD store over localStorage
+   * ======================================================================= */
+  var localDB = (function () {
+    var ENTITIES = ['stores', 'employees', 'divisions', 'policies', 'events'];
+    var mem = null;
+
+    function load() {
+      try {
+        var raw = window.localStorage.getItem(CONFIG.STORAGE_KEY);
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && parsed.collections) return parsed;
+        }
+      } catch (e) { /* storage blocked → memory mode */ }
+      return null;
+    }
+    function save() {
+      try { window.localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(mem)); }
+      catch (e) { /* quota or privacy mode */ }
+    }
+    function ensure() {
+      if (!mem) {
+        mem = load() || Seed.build();
+        ENTITIES.forEach(function (k) { if (!Array.isArray(mem.collections[k])) mem.collections[k] = []; });
+        if (!Array.isArray(mem.history)) mem.history = [];
+        if (!Array.isArray(mem.lastQuarterLog)) mem.lastQuarterLog = [];
+      }
+      return mem;
+    }
+
+    return {
+      ENTITIES: ENTITIES,
+      init: function () { ensure(); save(); return mem; },
+      getState: function () { ensure(); return U.clone(mem); },
+      setState: function (patch) {
+        ensure();
+        Object.keys(patch || {}).forEach(function (k) {
+          if (k === 'collections') {
+            ENTITIES.forEach(function (e) {
+              if (Array.isArray(patch.collections[e])) mem.collections[e] = patch.collections[e];
+            });
+          } else { mem[k] = patch[k]; }
+        });
+        mem.meta = mem.meta || {};
+        mem.meta.updatedAt = U.iso();
+        save();
+        return U.clone(mem);
+      },
+      reset: function () { mem = Seed.build(); save(); return U.clone(mem); },
+      list: function (entity) { ensure(); return U.clone(mem.collections[entity] || []); },
+      find: function (entity, id) {
+        var rows = mem.collections[entity] || [];
+        for (var i = 0; i < rows.length; i++) if (String(rows[i].id) === String(id)) return U.clone(rows[i]);
+        return null;
+      },
+      create: function (entity, data) {
+        ensure();
+        var rec = U.clone(data || {});
+        rec.id = U.uid(entity.slice(0, 3));
+        rec.createdAt = U.iso();
+        mem.collections[entity].push(rec);
+        save();
+        return U.clone(rec);
+      },
+      update: function (entity, id, data) {
+        ensure();
+        var rows = mem.collections[entity];
+        for (var i = 0; i < rows.length; i++) {
+          if (String(rows[i].id) === String(id)) {
+            Object.keys(data || {}).forEach(function (k) {
+              if (k !== 'id') rows[i][k] = data[k];
+            });
+            save();
+            return U.clone(rows[i]);
+          }
+        }
+        return null;
+      },
+      remove: function (entity, id) {
+        ensure();
+        var rows = mem.collections[entity], out = null;
+        for (var i = 0; i < rows.length; i++) {
+          if (String(rows[i].id) === String(id)) { out = rows.splice(i, 1)[0]; break; }
+        }
+        save();
+        return out ? U.clone(out) : null;
+      },
+      export: function () { ensure(); return JSON.stringify(mem, null, 2); },
+      import: function (json) {
+        try {
+          var parsed = JSON.parse(json);
+          if (!parsed || !parsed.collections) return false;
+          mem = parsed;
+          ENTITIES.forEach(function (k) { if (!Array.isArray(mem.collections[k])) mem.collections[k] = []; });
+          save();
+          return true;
+        } catch (e) { return false; }
+      }
+    };
+  })();
+
+  /* =========================================================================
+   * 05 FORECAST ENGINE (client mirror of ForecastService on GAS)
+   * ======================================================================= */
+  var Forecast = {
+    compute: function (state) {
+      var s = state, d = s.decisions, T = CONFIG.TUNING, i, e;
+      var stores = [], activeStores, headcount, areaManagers, divisions;
+      for (i = 0; i < s.collections.stores.length; i++) {
+        if (s.collections.stores[i].status !== 'tutup') stores.push(s.collections.stores[i]);
+      }
+      activeStores = stores.length;
+      headcount = s.collections.employees.length;
+      divisions = s.collections.divisions.length;
+      areaManagers = 0;
+      for (i = 0; i < headcount; i++) {
+        if (/area\s*manager/i.test(String(s.collections.employees[i].role))) areaManagers++;
+      }
+
+      var activePolicies = 0, shield = 0, restock = 0;
+      for (i = 0; i < s.collections.policies.length; i++) {
+        var p = s.collections.policies[i];
+        if (p.status === 'aktif') {
+          activePolicies++;
+          shield += Number(p.fraudShield) || 0;
+          restock += Number(p.restockDelta) || 0;
+        }
+      }
+      shield = Math.min(100, shield);
+
+      var eventBudget = 0, fatigueRelief = 0;
+      for (i = 0; i < s.collections.events.length; i++) {
+        eventBudget += Number(s.collections.events[i].budget) || 0;
+        fatigueRelief -= (Number(s.collections.events[i].fatigueImpact) || 0) / 100;
+      }
+
+      var professionals = 0, family = 0, payroll = 0;
+      for (i = 0; i < headcount; i++) {
+        e = s.collections.employees[i];
+        if (e.track === 'Profesional') professionals++; else family++;
+        payroll += Number(e.salary) || 0;
+      }
+      payroll = payroll * T.PAYROLL_MONTHS;
+
+      var staffingStress = U.clamp(
+        (activeStores * T.STAFFING_PER_STORE - headcount) * T.STAFFING_STRESS, 0, T.STAFFING_STRESS_MAX);
+      var nightLoad = (U.clamp(d.nightShiftRatio, 0, 100) / 100) * T.NIGHT_SHIFT_LOAD;
+      var comfort = (U.clamp(d.acBudget, 0, 100) / 100) * T.AC_COMFORT_COEFF;
+      var relief = fatigueRelief * T.RELIEF_SCALE;
+      var burnout = U.clamp(T.BURNOUT_BASE + nightLoad - comfort - relief + staffingStress, 0, 100);
+
+      var training = (U.clamp(d.trainingBudget, 0, 100) / 100) * T.TRAINING_COEFF;
+      var fairness = U.clamp(d.bonusFairness, 0, 100) / 100;
+      var enps = U.clamp(s.kpi.enps + (fairness - 0.45) * 60 - (burnout - 40) * 0.45 + fatigueRelief * 8, -100, 100);
+      var turnover = U.clamp(
+        T.TURNOVER_BASE + (burnout - 35) * T.BURNOUT_TURNOVER
+        + (45 - fairness * 100) * T.FAIRNESS_TURNOVER
+        - training * T.TRAINING_RETENTION
+        + (30 - enps) * T.ENPS_TURNOVER, 0.5, 95);
+
+      var shrinkage = U.clamp(
+        T.SHRINKAGE_BASE + (100 - U.clamp(d.auditLevel, 0, 100)) * T.AUDIT_SHRINKAGE
+        - shield * T.SHIELD_SHRINKAGE + (turnover / 100) * T.TURNOVER_SHRINKAGE, 0.1, 22);
+
+      var capacity = 0;
+      for (i = 0; i < stores.length; i++) capacity += Number(stores[i].capacity) || 0;
+      var fillRate = U.clamp(T.BASE_FILL_RATE - shrinkage / 100 - restock * T.RESTOCK_FILL, 0.25, 0.99);
+      var ticket = T.BASE_TICKET * (1 + (U.clamp(d.trainingBudget, 0, 100) / 100) * 0.18);
+      var strategyBoost = d.strategy === 'ekspansi' ? 1.12 : 1;
+      var gross = capacity * T.DAYS_PER_QUARTER * ticket * fillRate * strategyBoost;
+      var lostSales = restock * T.RESTOCK_DAY_VALUE * T.RESTOCK_STORE_FACTOR * activeStores;
+      var revenue = Math.max(0, gross - lostSales - (burnout / 100) * T.BURNOUT_REVENUE * gross);
+
+      var span = areaManagers > 0 ? U.round(activeStores / areaManagers, 2) : activeStores;
+      var spanRisk = Math.max(0, span - T.SPAN_LIMIT) * T.SPAN_PENALTY * 100;
+      var operationalRisk = U.clamp(spanRisk + (burnout - 40) * 0.6 + (turnover - 15) * 0.8, 0, 100);
+
+      var opex = activeStores * T.OPEX_PER_STORE + eventBudget
+        + (U.clamp(d.acBudget, 0, 100) / 100) * activeStores * T.AC_OPEX_PER_STEP;
+      var cash = s.kpi.cash + (revenue - payroll - opex);
+
+      var health = U.clamp(
+        100 - operationalRisk * T.HEALTH_OPRISK - turnover * T.HEALTH_TURNOVER
+        - shrinkage * T.HEALTH_SHRINKAGE - Math.abs(40 - burnout) * T.HEALTH_BURNOUT
+        - Math.max(0, 60 - enps) * T.HEALTH_ENPS, 0, 100);
+
+      var risks = [];
+      if (span > T.SPAN_LIMIT) risks.push({ code: 'SPAN', level: 'tinggi', label: 'Span of Control ' + span + ':1', detail: 'Satu Area Manager menanggung ' + activeStores + ' toko aktif. Node diagram berkedip merah.' });
+      if (turnover > 25) risks.push({ code: 'TURNOVER', level: 'tinggi', label: 'Turnover ' + U.round(turnover, 1) + '%', detail: 'Probabilitas resign profesional dieksekusi otomatis kuartal depan.' });
+      if (shrinkage > 5) risks.push({ code: 'SHRINKAGE', level: 'sedang', label: 'Shrinkage ' + U.round(shrinkage, 1) + '%', detail: 'Kebocoran rak &amp; kasir. Aktifkan SOP Audit untuk menaikkan fraud shield.' });
+      if (fillRate < 0.8) risks.push({ code: 'LOST_SALES', level: 'tinggi', label: 'Rak kosong ' + U.round((1 - fillRate) * 100, 0) + '%', detail: 'Lost sales diperkirakan ' + U.money(lostSales) + ' akibat restok melambat.' });
+      if (burnout > 65) risks.push({ code: 'BURNOUT', level: 'tinggi', label: 'Burnout Index ' + U.round(burnout, 0), detail: 'Shift malam kelebihan beban. Jalankan Event Architect &amp; rotasi shift.' });
+      if (staffingStress > 8) risks.push({ code: 'STAFFING', level: 'sedang', label: 'Kekurangan karyawan', detail: 'Butuh ' + (activeStores * T.STAFFING_PER_STORE) + ' orang untuk ' + activeStores + ' toko aktif, tersedia ' + headcount + '.' });
+      if (cash < 0) risks.push({ code: 'CASH', level: 'kritis', label: 'Cashflow negatif', detail: 'Operasional tidak tertutup. Potong opex, payroll, atau hentikan ekspansi.' });
+
+      return {
+        kpi: {
+          revenue: Math.round(revenue),
+          revenueTarget: s.scenario.targetRevenue || s.kpi.revenueTarget,
+          cash: Math.round(cash), payroll: Math.round(payroll), opex: Math.round(opex),
+          enps: Math.round(enps), turnoverRate: U.round(turnover, 1),
+          burnoutIndex: Math.round(burnout), shrinkage: U.round(shrinkage, 1),
+          fillRate: U.round(fillRate * 100, 1), spanOfControl: span,
+          operationalRisk: Math.round(operationalRisk), health: Math.round(health),
+          headcount: headcount, activeStores: activeStores,
+          divisions: divisions, activePolicies: activePolicies,
+          professionals: professionals, family: family, eventBudget: eventBudget,
+          lostSales: Math.round(lostSales), avgTicket: Math.round(ticket),
+          staffingStress: Math.round(staffingStress)
+        },
+        risks: risks,
+        quarters: Forecast.trajectory(Math.round(revenue), health, U.round(turnover, 1))
+      };
+    },
+
+    trajectory: function (revenue, health, turnover) {
+      var out = [], drift = (health - 60) / 100, q;
+      for (q = 1; q <= 6; q++) {
+        out.push({
+          quarter: 'Q' + q,
+          revenue: Math.round(revenue * (1 + drift * q * 0.06) + q * revenue * 0.012),
+          turnover: U.round(Math.max(1, turnover - q * drift * 1.4), 1),
+          enps: Math.round(20 + q * drift * 2.4)
+        });
+      }
+      return out;
+    },
+
+    advance: function (state) {
+      var s = U.clone(state), f = Forecast.compute(s), log = [], i, e;
+      var survivors = [];
+      for (i = 0; i < s.collections.employees.length; i++) {
+        e = s.collections.employees[i];
+        var risk = U.clamp(Number(e.flightRisk) + (f.kpi.turnoverRate - 18) * 1.4 + (f.kpi.burnoutIndex - 45) * 0.6, 0, 99);
+        if (risk > 78) {
+          log.push({ type: 'resign', text: e.name + ' (' + e.role + ') resign — flight risk ' + Math.round(risk) + '%', impact: -1 });
+        } else {
+          e.flightRisk = Math.round(risk);
+          survivors.push(e);
+        }
+      }
+      if (!log.length) log.push({ type: 'stable', text: 'Seluruh tim bertahan kuartal ini.', impact: 1 });
+      if (f.kpi.operationalRisk > 70) log.push({ type: 'ops', text: 'Risiko operasional ' + f.kpi.operationalRisk + '% — bottleneck birokrasi terdeteksi.', impact: -1 });
+      if (!f.risks.length) log.push({ type: 'growth', text: 'Nol risiko aktif. Revenue ' + U.money(f.kpi.revenue) + ' tercatat.', impact: 1 });
+
+      s.collections.employees = survivors;
+      s.kpi = f.kpi;
+      s.kpi.cash = f.kpi.cash;
+      s.meta.quarter = (Number(s.meta.quarter) || 1) + 1;
+      s.history.push({ quarter: s.meta.quarter - 1, revenue: f.kpi.revenue, turnover: f.kpi.turnoverRate, enps: f.kpi.enps, note: f.risks.length ? f.risks[0].label : 'Sehat' });
+      if (s.history.length > CONFIG.TUNING.MAX_HISTORY) s.history = s.history.slice(-CONFIG.TUNING.MAX_HISTORY);
+      s.lastQuarterLog = log;
+      return s;
+    }
+  };
+
+  /* =========================================================================
+   * 06 DOMINO CHAIN
+   * ======================================================================= */
+  var Domino = {
+    chain: function (state) {
+      var d = state.decisions, chain = [];
+      chain.push({ step: 1, node: 'Budget AC &amp; Kenyamanan', value: d.acBudget + '%', tone: 'input' });
+      if (d.acBudget < 30) {
+        chain.push({ step: 2, node: 'Kasir gerah &amp; lambat', value: 'Burnout +' + Math.round((30 - d.acBudget) * 0.9), tone: 'risk' });
+        chain.push({ step: 3, node: 'Turnover naik', value: '+' + U.round((30 - d.acBudget) * 0.22, 1) + ' pp', tone: 'risk' });
+        chain.push({ step: 4, node: 'Rekrutmen ulang', value: '−' + U.money((30 - d.acBudget) * 1800000), tone: 'risk' });
+        chain.push({ step: 5, node: 'Revenue tererosi', value: '−' + U.round((30 - d.acBudget) * 0.31, 1) + '%', tone: 'critical' });
+      } else {
+        chain.push({ step: 2, node: 'Kenyamanan malam stabil', value: 'Burnout −' + Math.round(d.acBudget * 0.4), tone: 'good' });
+        chain.push({ step: 3, node: 'Retensi kasir naik', value: '+' + U.round(d.acBudget * 0.15, 1) + ' pp', tone: 'good' });
+        chain.push({ step: 4, node: 'Produktivitas rak stabil', value: 'Fill rate 94%', tone: 'good' });
+        chain.push({ step: 5, node: 'Revenue terlindungi', value: '+' + U.round(d.acBudget * 0.28, 1) + '%', tone: 'good' });
+      }
+      if (d.auditLevel < 45) {
+        chain.push({ step: 6, node: 'Audit lemah', value: 'Fraud shield rendah', tone: 'risk' });
+        chain.push({ step: 7, node: 'Shrinkage naik', value: '+' + U.round((45 - d.auditLevel) * 0.055, 1) + ' pp', tone: 'risk' });
+        chain.push({ step: 8, node: 'Margin hilang', value: '−' + U.money((45 - d.auditLevel) * 21000000), tone: 'critical' });
+      } else {
+        chain.push({ step: 6, node: 'Audit &amp; QC aktif', value: 'Fraud shield tinggi', tone: 'good' });
+        chain.push({ step: 7, node: 'Shrinkage terkendali', value: '−' + U.round((d.auditLevel - 45) * 0.035, 1) + ' pp', tone: 'good' });
+        chain.push({ step: 8, node: 'Margin terlindungi', value: '+' + U.money((d.auditLevel - 45) * 18000000), tone: 'good' });
+      }
+      if (d.bonusFairness < 50) {
+        chain.push({ step: 9, node: 'Bonus tidak adil', value: d.bonusFairness + '% fair', tone: 'risk' });
+        chain.push({ step: 10, node: 'Flight risk profesional', value: '+' + Math.round((50 - d.bonusFairness) * 0.55) + '%', tone: 'risk' });
+        chain.push({ step: 11, node: 'Resign massal Q+1', value: 'Otomatis dieksekusi', tone: 'critical' });
+      } else {
+        chain.push({ step: 9, node: 'Bonus meriteka', value: d.bonusFairness + '% fair', tone: 'good' });
+        chain.push({ step: 10, node: 'Flight risk turun', value: '−' + Math.round((d.bonusFairness - 50) * 0.30) + '%', tone: 'good' });
+        chain.push({ step: 11, node: 'Suksesi internal kuat', value: 'Pipeline terisi', tone: 'good' });
+      }
+      return chain;
+    }
+  };
+
+  /* =========================================================================
+   * 07 VIZ — Mermaid.js renderer + vector fallback (offline safety net)
+   * ======================================================================= */
+  var Viz = {
+    ready: false,
+    counter: 0,
+    syntax: {},
+
+    init: function () {
+      if (typeof window.mermaid === 'undefined') {
+        Viz.ready = false;
+        return false;
+      }
+      try {
+        window.mermaid.initialize({
+          startOnLoad: false,
+          securityLevel: 'loose',
+          theme: 'base',
+          fontFamily: 'Inter, system-ui, sans-serif',
+          flowchart: { htmlLabels: true, useMaxWidth: true, curve: 'basis', nodeSpacing: 46, rankSpacing: 62 },
+          themeVariables: {
+            background: '#ffffff',
+            primaryColor: '#eff6ff',
+            primaryTextColor: '#0b1220',
+            primaryBorderColor: '#2563eb',
+            lineColor: '#94a3b8',
+            fontSize: '14px',
+            fontFamily: 'Inter, system-ui, sans-serif'
+          }
+        });
+        Viz.ready = true;
+      } catch (e) { Viz.ready = false; }
+      return Viz.ready;
+    },
+
+    build: function (kind, state) {
+      var f = Forecast.compute(state), s = state, i, lines, esc;
+      esc = function (t) {
+        return String(t === null || t === undefined ? '' : t)
+          .replace(/&/g, '&amp;').replace(/"/g, "'").replace(/[\[\]{}]/g, '');
+      };
+      var activePolicies = [], shield = 0, restock = 0;
+      for (i = 0; i < s.collections.policies.length; i++) {
+        var p = s.collections.policies[i];
+        if (p.status === 'aktif') { activePolicies.push(esc(p.name)); shield += Number(p.fraudShield) || 0; restock += Number(p.restockDelta) || 0; }
+      }
+
+      if (kind === 'org') {
+        lines = ['flowchart TD'];
+        for (i = 0; i < s.collections.divisions.length; i++) {
+          var d = s.collections.divisions[i];
+          lines.push('  ' + d.id + '["' + esc(d.name) + '<br/>' + (Number(d.headcount) || 0) + ' orang"]');
+          if (d.parentId) lines.push('  ' + d.parentId + ' --> ' + d.id);
+          var isArea = /area/i.test(String(d.name));
+          if ((isArea && f.kpi.spanOfControl > CONFIG.TUNING.SPAN_LIMIT) || (Number(d.headcount) || 0) > 60) {
+            lines.push('  class ' + d.id + ' overloaded');
+          }
+        }
+        if (f.kpi.spanOfControl > CONFIG.TUNING.SPAN_LIMIT) {
+          lines.push('  SPAN{{"SPAN OF CONTROL ' + f.kpi.spanOfControl + ':1 — OVERLOADED"}}');
+          lines.push('  SPAN -. "Risiko Operasional ' + f.kpi.operationalRisk + '%" .-> div-area');
+          lines.push('  class SPAN alarm');
+        }
+        lines.push('  classDef overloaded fill:#fee2e2,stroke:#ef4444,stroke-width:3px,color:#7f1d1d');
+        lines.push('  classDef alarm fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,stroke-dasharray: 6 4,color:#78350f');
+        return lines.join('\n');
+      }
+
+      if (kind === 'process') {
+        lines = ['flowchart LR'];
+        if (!activePolicies.length) {
+          lines.push('  A[Supplier] --> B[Kepala Toko] --> C[Rak Toko]');
+          lines.push('  C --> D[Kasir] --> E[Pelanggan]');
+          lines.push('  E -.-> NOTE["TANPA SOP: cepat, rawan fraud &amp; shrinkage"]');
+          lines.push('  class A,B,C,D,E fast');
+          lines.push('  class NOTE warn');
+          lines.push('  classDef fast fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46');
+          lines.push('  classDef warn fill:#fffbeb,stroke:#f59e0b,stroke-width:1px,color:#78350f');
+          return lines.join('\n');
+        }
+        lines.push('  S[Supplier] --> G[Gudang Pusat]');
+        for (i = 0; i < activePolicies.length; i++) lines.push('  G --> P' + i + '["' + activePolicies[i] + '"]');
+        lines.push('  P' + (activePolicies.length - 1) + ' --> Q[QC Check] --> D[Distribusi] --> R[Rak Toko] --> K[Kasir] --> C[Pelanggan]');
+        lines.push('  K --> L["Lost Sales: ' + U.money(f.kpi.lostSales) + '"]');
+        lines.push('  class S,G,Q,D,R,K,C safe');
+        lines.push('  class L critical');
+        lines.push('  classDef safe fill:#eff6ff,stroke:#2563eb,stroke-width:2px,color:#1e3a8a');
+        lines.push('  classDef critical fill:#fef2f2,stroke:#ef4444,stroke-width:2px,color:#7f1d1d');
+        return lines.join('\n');
+      }
+
+      if (kind === 'mindmap') {
+        lines = ['mindmap', '  root(("ApexHR ' + esc(s.meta.companyName) + '"))'];
+        lines.push('    Strategy["' + (s.decisions.strategy === 'ekspansi' ? 'EKSPANSI NASIONAL' : 'PERTAHANKAN PASAR') + '"]');
+        lines.push('      HR["HR Initiative"]');
+        lines.push('        A1["Struktur Profesional"]');
+        lines.push('        A2["Talent Matrix 9-Box"]');
+        lines.push('        A3["Appraisal Adil"]');
+        lines.push('      KPI["Store KPI"]');
+        lines.push('        B1["Revenue ' + U.money(f.kpi.revenue) + '"]');
+        lines.push('        B2["Turnover ' + f.kpi.turnoverRate + '%"]');
+        lines.push('        B3["eNPS ' + f.kpi.enps + '"]');
+        lines.push('      Focus["' + esc(s.scenario.title) + '"]');
+        if (f.kpi.health > 55) {
+          lines.push('    Strategy --> HR');
+          lines.push('    HR --> KPI');
+        } else {
+          lines.push('    Strategy -. "MISALIGNED" .-> HR');
+          lines.push('    HR -. "MISALIGNED" .-> KPI');
+        }
+        return lines.join('\n');
+      }
+
+      if (kind === 'succession') {
+        var key = ['Head of Supply Chain', 'Area Manager', 'Kepala Toko', 'CFO', 'CHRO'], broken = [];
+        lines = ['flowchart LR'];
+        for (i = 0; i < key.length; i++) {
+          var bench = 0, e2;
+          for (e2 = 0; e2 < s.collections.employees.length; e2++) {
+            if (String(s.collections.employees[e2].role).toLowerCase().indexOf(key[i].toLowerCase().split(' ')[0]) !== -1) bench++;
+          }
+          if (bench < 2) broken.push(key[i]);
+          lines.push('  K' + i + '["' + esc(key[i]) + '<br/>Bench: ' + bench + '"]');
+          if (i > 0) lines.push('  K' + (i - 1) + ' --> K' + i);
+        }
+        if (broken.length) {
+          lines.push('  GAP{{"PIPELINE KOSONG: ' + esc(broken.join(', ')) + '"}}');
+          lines.push('  GAP -. "Lumpuh Total" .-> K0');
+          lines.push('  class GAP black');
+          lines.push('  classDef black fill:#0f172a,stroke:#020617,stroke-width:3px,color:#f8fafc');
+        } else {
+          lines.push('  OK["Pipeline Siap — Risiko suksesi rendah"]');
+          lines.push('  K4 --> OK');
+          lines.push('  class OK good');
+          lines.push('  classDef good fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46');
+        }
+        lines.push('  LOSS["Estimasi kerugian supply chain: ' + U.money(f.kpi.lostSales) + '"]');
+        lines.push('  K0 -.-> LOSS');
+        lines.push('  class LOSS warn');
+        lines.push('  classDef warn fill:#fffbeb,stroke:#f59e0b,stroke-width:2px,color:#78350f');
+        return lines.join('\n');
+      }
+
+      /* fatigue */
+      lines = ['flowchart LR', '  N["Shift Malam ' + s.decisions.nightShiftRatio + '%"]',
+        '  N --> F["Fatigue ' + f.kpi.burnoutIndex + '/100"]'];
+      if (f.kpi.burnoutIndex < 45) {
+        lines.push('  F --> E["ENGAGED"]');
+        lines.push('  E --> T["Turnover turun ke ' + f.kpi.turnoverRate + '%"]');
+        lines.push('  class F,E,T good');
+        lines.push('  classDef good fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46');
+      } else {
+        lines.push('  F --> B["BURNOUT"]');
+        lines.push('  B --> R["Resign &amp; antrean panjang"]');
+        lines.push('  R --> L["Revenue turun ' + U.money(f.kpi.revenue) + '"]');
+        lines.push('  class F,B,R,L bad');
+        lines.push('  classDef bad fill:#fef2f2,stroke:#ef4444,stroke-width:2px,color:#7f1d1d');
+      }
+      for (i = 0; i < s.collections.events.length && i < 3; i++) {
+        lines.push('  EV' + i + '["' + esc(s.collections.events[i].name) + '"]');
+        lines.push('  EV' + i + ' -. "eNPS +' + (Number(s.collections.events[i].enpsImpact) || 0) + '" .-> F');
+        lines.push('  class EV' + i + ' ev');
+      }
+      lines.push('  classDef ev fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95');
+      return lines.join('\n');
+    },
+
+    /** Pure-SVG fallback so the canvas never stays blank without a CDN. */
+    fallback: function (kind, state) {
+      var f = Forecast.compute(state), s = state, i, boxes = [], w = 150, h = 54, gap = 26, y = 18, x = 18;
+      var palette = { blue: ['#eff6ff', '#2563eb'], green: ['#ecfdf5', '#059669'], rose: ['#fef2f2', '#e11d48'], amber: ['#fffbeb', '#d97706'], violet: ['#f5f3ff', '#7c3aed'], dark: ['#0f172a', '#020617'] };
+      function add(label, tone, span) {
+        var p = palette[tone] || palette.blue;
+        boxes.push({ x: x, y: y, w: w * (span || 1) + gap * ((span || 1) - 1), h: h, label: label, fill: p[0], stroke: p[1] });
+        x += w * (span || 1) + gap * ((span || 1) - 1) + gap;
+      }
+      function row() { x = 18; y += h + 30; }
+
+      if (kind === 'org') {
+        add(s.meta.companyName, 'dark');
+        row();
+        for (i = 0; i < s.collections.divisions.length; i++) {
+          var d = s.collections.divisions[i];
+          add(d.name + ' · ' + (Number(d.headcount) || 0) + ' org', (Number(d.headcount) || 0) > 24 ? 'rose' : 'blue');
+          if ((i + 1) % 4 === 0) row();
+        }
+      } else if (kind === 'process') {
+        var seq = ['Supplier', 'Gudang Pusat'];
+        for (i = 0; i < s.collections.policies.length; i++) {
+          if (s.collections.policies[i].status === 'aktif') seq.push(s.collections.policies[i].name);
+        }
+        seq.push('QC Check', 'Distribusi', 'Rak Toko', 'Kasir', 'Pelanggan');
+        for (i = 0; i < seq.length; i++) {
+          add(seq[i], i >= seq.length - 2 ? 'green' : 'blue');
+          if ((i + 1) % 5 === 0) row();
+        }
+      } else if (kind === 'mindmap') {
+        add('ApexHR ' + s.meta.companyName, 'dark');
+        row();
+        add(s.decisions.strategy === 'ekspansi' ? 'EKSPANSI NASIONAL' : 'PERTAHANKAN PASAR', 'violet');
+        add('HR Initiative', 'blue');
+        add('Store KPI · ' + U.money(f.kpi.revenue), 'green');
+        row();
+        add('Turnover ' + f.kpi.turnoverRate + '%', f.kpi.turnoverRate > 25 ? 'rose' : 'green');
+        add('eNPS ' + f.kpi.enps, f.kpi.enps < 20 ? 'rose' : 'green');
+        add('Health ' + f.kpi.health, 'blue');
+      } else if (kind === 'succession') {
+        var key = ['Head of Supply Chain', 'Area Manager', 'Kepala Toko', 'CFO', 'CHRO'];
+        for (i = 0; i < key.length; i++) {
+          var bench = 0;
+          for (var e = 0; e < s.collections.employees.length; e++) {
+            if (String(s.collections.employees[e].role).toLowerCase().indexOf(key[i].toLowerCase().split(' ')[0]) !== -1) bench++;
+          }
+          add(key[i] + ' · bench ' + bench, bench < 2 ? 'rose' : 'green');
+          if ((i + 1) % 4 === 0) row();
+        }
+      } else {
+        add('Shift Malam ' + s.decisions.nightShiftRatio + '%', 'violet');
+        add('Fatigue ' + f.kpi.burnoutIndex, f.kpi.burnoutIndex > 65 ? 'rose' : 'green');
+        add(f.kpi.burnoutIndex < 45 ? 'ENGAGED' : 'BURNOUT', f.kpi.burnoutIndex < 45 ? 'green' : 'rose');
+        add('Turnover ' + f.kpi.turnoverRate + '%', f.kpi.turnoverRate > 25 ? 'rose' : 'green');
+      }
+
+      var maxX = 18, svg = '', arrows = '', prevRight = null, prevY = null;
+      for (i = 0; i < boxes.length; i++) {
+        var b = boxes[i];
+        maxX = Math.max(maxX, b.x + b.w);
+        svg += '<rect x="' + b.x + '" y="' + b.y + '" width="' + b.w + '" height="' + b.h + '" rx="12" fill="' + b.fill + '" stroke="' + b.stroke + '" stroke-width="2"/>';
+        var linesTxt = String(b.label).split('<br/>');
+        var ty = b.y + b.h / 2 - (linesTxt.length - 1) * 8;
+        for (var L = 0; L < linesTxt.length; L++) {
+          svg += '<text x="' + (b.x + b.w / 2) + '" y="' + (ty + L * 16) + '" text-anchor="middle" dominant-baseline="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#0b1220">'
+            + U.esc(linesTxt[L].replace(/&amp;/g, '&')) + '</text>';
+        }
+        if (prevRight !== null) {
+          arrows += '<path d="M' + prevRight.x + ' ' + prevRight.y + ' H' + (b.x - 8) + '" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#apexArrow)"/>';
+        }
+        prevRight = { x: b.x + b.w, y: b.y + b.h / 2 };
+      }
+      var totalH = y + h + 18;
+      return '<svg viewBox="0 0 ' + Math.max(320, maxX + 18) + ' ' + totalH + '" width="100%" role="img" aria-label="Diagram ' + U.esc(kind) + '">'
+        + '<defs><marker id="apexArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs>'
+        + arrows + svg + '</svg>';
+    },
+
+    render: function (kind, state, target) {
+      var syntax = Viz.build(kind, state);
+      Viz.syntax[kind] = syntax;
+      var host = target || U.$('mermaidOut');
+      if (!host) return;
+
+      var paint = function (html) { host.innerHTML = html; };
+
+      if (!Viz.ready) {
+        Viz.init();
+        if (!Viz.ready) { paint(Viz.fallback(kind, state)); return; }
+      }
+      Viz.counter++;
+      var id = 'apexG' + Viz.counter + '_' + Math.floor(Math.random() * 1e6);
+      try {
+        window.mermaid.render(id, syntax).then(function (res) {
+          paint(res.svg);
+        }).catch(function () {
+          paint(Viz.fallback(kind, state));
+        });
+      } catch (err) {
+        paint(Viz.fallback(kind, state));
+      }
+    }
+  };
+
+  /* =========================================================================
+   * 08 API — REST client (Google Apps Script envelope)
+   * ======================================================================= */
+  var Api = {
+    request: function (action, params, method) {
+      if (!CONFIG.API_BASE) return Promise.resolve(null);
+      var url = CONFIG.API_BASE + '?action=' + encodeURIComponent(action);
+      var opts = { method: method || 'GET', headers: { 'X-ApexHR-Key': CONFIG.API_KEY } };
+      if ((method || 'GET') === 'POST') {
+        opts.headers['Content-Type'] = 'text/plain;charset=utf-8';
+        opts.body = JSON.stringify(Object.assign({ action: action }, params || {}));
+      }
+      var timer = new Promise(function (_, reject) {
+        setTimeout(function () { reject(new Error('timeout')); }, CONFIG.API_TIMEOUT);
+      });
+      return Promise.race([fetch(url, opts).then(function (r) { return r.json(); }), timer])
+        .then(function (json) {
+          if (json && json.success) return json;
+          throw new Error((json && json.message) || 'Respons API tidak valid');
+        })
+        .catch(function () { return null; });
+    },
+    ping: function () {
+      return Api.request('ping', null, 'GET').then(function (res) {
+        return !!(res && res.data && res.data.version);
+      });
+    },
+    forecast: function (state) {
+      return Api.request('forecast', { state: state }, 'POST').then(function (res) {
+        return res && res.data ? res.data : null;
+      });
+    },
+    mermaid: function (type, state) {
+      return Api.request('mermaid', { type: type, state: state }, 'POST').then(function (res) {
+        return res && res.data && res.data.syntax ? res.data.syntax : null;
+      });
+    },
+    save: function (state) {
+      return Api.request('save', { state: state }, 'POST');
+    },
+    crud: function (entity, operation, payload) {
+      return Api.request('crud', { entity: entity, operation: operation, payload: payload || {} }, 'POST');
+    }
+  };
+
+  /* =========================================================================
+   * 09 UI — toasts, modal, tabs, accordion, nav, reveal, counters
+   * ======================================================================= */
+  var UI = {
+    toast: function (message, tone) {
+      var wrap = U.$('apexToasts');
+      if (!wrap) return;
+      var colors = { ok: '#10b981', warn: '#f59e0b', err: '#e11d48', info: '#2563eb' };
+      var el = document.createElement('div');
+      el.className = 'apex-toast';
+      el.setAttribute('role', 'status');
+      el.innerHTML = '<span class="t-dot" style="background:' + (colors[tone] || colors.info) + '"></span><span>' + U.esc(message) + '</span>';
+      wrap.appendChild(el);
+      setTimeout(function () {
+        el.classList.add('out');
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 420);
+      }, 3400);
+    },
+
+    modal: {
+      open: function (title, sub, fieldsHtml, onSubmit) {
+        U.$('apexModalTitle').innerHTML = title;
+        U.$('apexModalSub').innerHTML = sub || '';
+        U.$('apexFormFields').innerHTML = fieldsHtml;
+        U.$('apexFormError').classList.add('hidden');
+        var ov = U.$('apexOverlay');
+        ov.classList.add('apex-open');
+        ov.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        UI.modal._submit = onSubmit;
+        var first = U.$('apexFormFields').querySelector('input,select,textarea');
+        if (first) setTimeout(function () { first.focus(); }, 260);
+      },
+      close: function () {
+        var ov = U.$('apexOverlay');
+        ov.classList.remove('apex-open');
+        ov.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        UI.modal._submit = null;
+      },
+      _submit: null
+    },
+
+    tabs: function (container, attr, onPick) {
+      var host = U.$(container);
+      if (!host) return;
+      U.on(host, 'click', function (ev) {
+        var btn = ev.target.closest('[' + attr + ']');
+        if (!btn || !host.contains(btn)) return;
+        U.$$('[' + attr + ']', host).forEach(function (b) {
+          b.classList.remove('apex-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('apex-active');
+        btn.setAttribute('aria-selected', 'true');
+        if (onPick) onPick(btn.getAttribute(attr));
+      });
+    },
+
+    accordion: function (listId) {
+      var list = U.$(listId);
+      if (!list) return;
+      U.on(list, 'click', function (ev) {
+        var btn = ev.target.closest('.apex-acc-btn');
+        if (!btn) return;
+        var acc = btn.parentNode, body = acc.querySelector('.apex-acc-body');
+        var isOpen = acc.classList.contains('apex-open');
+        U.$$('.apex-acc', list).forEach(function (a) {
+          a.classList.remove('apex-open');
+          a.querySelector('.apex-acc-body').style.maxHeight = '0px';
+          var b = a.querySelector('.apex-acc-btn');
+          if (b) b.setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          acc.classList.add('apex-open');
+          body.style.maxHeight = (body.scrollHeight + 40) + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    },
+
+    nav: function () {
+      var nav = U.$('apexNav'), burger = U.$('apexBurger'), menu = U.$('apexMobileMenu');
+      var progress = U.$('apexProgress'), top = U.$('apexTop');
+      var onScroll = function () {
+        var y = window.pageYOffset || document.documentElement.scrollTop;
+        if (nav) nav.classList.toggle('apex-scrolled', y > 24);
+        if (top) top.classList.toggle('apex-show', y > 620);
+        if (progress) {
+          var h = document.documentElement.scrollHeight - window.innerHeight;
+          progress.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, y / h) : 0) + ')';
+        }
+        var links = U.$$('.apex-nav-link'), current = '';
+        links.forEach(function (a) {
+          var sec = document.querySelector(a.getAttribute('href'));
+          if (!sec) return;
+          var r = sec.getBoundingClientRect();
+          if (r.top <= 140 && r.bottom > 140) current = a.getAttribute('href');
+        });
+        links.forEach(function (a) {
+          if (a.getAttribute('href') === current) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      U.on(burger, 'click', function () {
+        var open = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('apex-open', !open);
+      });
+      U.$$('#apexMobileMenu a').forEach(function (a) {
+        U.on(a, 'click', function () {
+          burger.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('apex-open');
+        });
+      });
+      U.on(top, 'click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    },
+
+    reveal: function () {
+      var items = U.$$('.apex-reveal');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('apex-in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add('apex-in');
+            io.unobserve(en.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      items.forEach(function (el) { io.observe(el); });
+    },
+
+    counters: function () {
+      var els = U.$$('[data-apex-count]');
+      var run = function (el) {
+        var target = Number(el.getAttribute('data-apex-count')) || 0;
+        var suffix = el.getAttribute('data-apex-suffix') || '';
+        var start = performance.now(), dur = 1500;
+        var step = function (now) {
+          var p = Math.min(1, (now - start) / dur);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased) + suffix;
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+      if (!('IntersectionObserver' in window)) { els.forEach(run); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { run(en.target); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.4 });
+      els.forEach(function (el) { io.observe(el); });
+    },
+
+    animateNumber: function (el, to, fmt) {
+      var from = Number(el.getAttribute('data-cur')) || 0;
+      el.setAttribute('data-cur', to);
+      var start = performance.now(), dur = 620;
+      var step = function (now) {
+        var p = Math.min(1, (now - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt(from + (to - from) * eased);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+  };
+
+  /* =========================================================================
+   * 10 CRUD — full Create / Read / Update / Delete
+   * ======================================================================= */
+  var Crud = {
+    entity: 'stores',
+    editing: null,
+
+    SCHEMA: {
+      stores: {
+        label: 'Toko', one: 'Toko',
+        fields: [
+          { key: 'name', label: 'Nama Toko', type: 'text', required: true },
+          { key: 'region', label: 'Wilayah', type: 'text', required: true },
+          { key: 'tier', label: 'Kelas Toko', type: 'select', options: ['Kios', 'Mini', 'Reguler', 'Unggulan'] },
+          { key: 'capacity', label: 'Kapasitas Pelanggan per Hari', type: 'number', min: 20, max: 900 },
+          { key: 'openHours', label: 'Jam Buka per Hari', type: 'number', min: 1, max: 24 },
+          { key: 'status', label: 'Status Operasional', type: 'select', options: ['aktif', 'renovasi', 'tutup'] }
+        ],
+        cols: ['name', 'region', 'tier', 'capacity', 'status']
+      },
+      employees: {
+        label: 'Karyawan', one: 'Karyawan',
+        fields: [
+          { key: 'name', label: 'Nama Lengkap', type: 'text', required: true },
+          { key: 'role', label: 'Jabatan', type: 'text', required: true },
+          { key: 'track', label: 'Jalur Karir', type: 'select', options: ['Keluarga', 'Profesional'] },
+          { key: 'departmentId', label: 'Divisi', type: 'entity', source: 'divisions' },
+          { key: 'storeId', label: 'Penempatan Toko', type: 'entity', source: 'stores' },
+          { key: 'performance', label: 'Performa (1-5)', type: 'number', min: 1, max: 5 },
+          { key: 'potential', label: 'Potensi (1-5)', type: 'number', min: 1, max: 5 },
+          { key: 'flightRisk', label: 'Flight Risk (%)', type: 'number', min: 0, max: 99 },
+          { key: 'salary', label: 'Gaji Bulanan (Rp)', type: 'number', min: 1000000, max: 100000000 }
+        ],
+        cols: ['name', 'role', 'track', 'performance', 'potential', 'flightRisk']
+      },
+      divisions: {
+        label: 'Divisi', one: 'Divisi',
+        fields: [
+          { key: 'name', label: 'Nama Divisi', type: 'text', required: true },
+          { key: 'parentId', label: 'Divisi Induk', type: 'entity', source: 'divisions' },
+          { key: 'headId', label: 'ID Pimpinan', type: 'text' },
+          { key: 'headcount', label: 'Jumlah Orang', type: 'number', min: 1, max: 500 },
+          { key: 'level', label: 'Level Hierarki', type: 'number', min: 0, max: 8 }
+        ],
+        cols: ['name', 'parentId', 'headcount', 'level']
+      },
+      policies: {
+        label: 'Kebijakan / SOP', one: 'Kebijakan',
+        fields: [
+          { key: 'name', label: 'Nama Kebijakan', type: 'text', required: true },
+          { key: 'category', label: 'Kategori', type: 'select', options: ['Operasional', 'Keuangan', 'Organisasi', 'Kompensasi', 'Budaya'] },
+          { key: 'status', label: 'Status', type: 'select', options: ['aktif', 'nonaktif'] },
+          { key: 'restockDelta', label: 'Tambah Hari Restok', type: 'number', min: 0, max: 10 },
+          { key: 'fraudShield', label: 'Fraud Shield (0-100)', type: 'number', min: 0, max: 100 }
+        ],
+        cols: ['name', 'category', 'status', 'restockDelta', 'fraudShield']
+      },
+      events: {
+        label: 'Event Budaya', one: 'Event',
+        fields: [
+          { key: 'name', label: 'Nama Program', type: 'text', required: true },
+          { key: 'budget', label: 'Anggaran (Rp)', type: 'number', min: 0, max: 1000000000 },
+          { key: 'enpsImpact', label: 'Dampak eNPS', type: 'number', min: -30, max: 40 },
+          { key: 'fatigueImpact', label: 'Dampak Fatigue (negatif = meredam)', type: 'number', min: -40, max: 30 }
+        ],
+        cols: ['name', 'budget', 'enpsImpact', 'fatigueImpact']
+      }
+    },
+
+    cell: function (entity, row, key) {
+      var v = row[key];
+      if (key === 'status') {
+        var on = String(v) === 'aktif';
+        return '<span class="apex-badge ' + (on ? 'apex-badge-ok' : 'apex-badge-off') + '">' + U.esc(v) + '</span>';
+      }
+      if (key === 'track') {
+        return '<span class="apex-badge ' + (v === 'Profesional' ? 'apex-badge-pro' : 'apex-badge-fam') + '">' + U.esc(v) + '</span>';
+      }
+      if (key === 'budget' || key === 'salary') return '<span class="apex-num">' + U.money(v) + '</span>';
+      if (key === 'flightRisk') {
+        var n = Number(v) || 0, tone = n > 65 ? 'apex-badge-off' : (n > 40 ? 'apex-badge-off' : 'apex-badge-ok');
+        var col = n > 65 ? '#e11d48' : (n > 40 ? '#d97706' : '#059669');
+        return '<div class="flex items-center gap-2 min-w-[110px]"><span class="apex-num" style="color:' + col + ';font-weight:600">' + n + '%</span>'
+          + '<span class="apex-meter flex-1"><i style="width:' + n + '%;background:' + col + '"></i></span></div>';
+      }
+      if (key === 'parentId') {
+        if (!v) return '<span class="text-apex-mute">— puncak —</span>';
+        var d = localDB.find('divisions', v);
+        return d ? U.esc(d.name) : '<span class="text-apex-mute">' + U.esc(v) + '</span>';
+      }
+      if (key === 'departmentId' || key === 'storeId') {
+        if (!v) return '<span class="text-apex-mute">—</span>';
+        var src = key === 'departmentId' ? 'divisions' : 'stores';
+        var f = localDB.find(src, v);
+        return f ? U.esc(f.name) : '<span class="text-apex-mute">' + U.esc(v) + '</span>';
+      }
+      if (key === 'performance' || key === 'potential') {
+        var p = Number(v) || 0;
+        return '<span class="apex-num">' + p + '/5</span>';
+      }
+      if (key === 'enpsImpact' || key === 'fatigueImpact') {
+        var num = Number(v) || 0;
+        return '<span class="apex-num" style="color:' + (num < 0 ? '#059669' : '#d97706') + ';font-weight:600">' + (num > 0 ? '+' : '') + num + '</span>';
+      }
+      return U.esc(v === '' || v === null || v === undefined ? '—' : v);
+    },
+
+    renderTable: function () {
+      var schema = Crud.SCHEMA[Crud.entity];
+      var rows = localDB.list(Crud.entity);
+      var head = U.$('crudHead'), body = U.$('crudBody');
+      if (!head || !body) return;
+
+      head.innerHTML = '<tr>' + schema.cols.map(function (c) {
+        var f = schema.fields.filter(function (x) { return x.key === c; })[0];
+        return '<th scope="col">' + U.esc(f ? f.label : c) + '</th>';
+      }).join('') + '<th scope="col">Aksi</th></tr>';
+
+      if (!rows.length) {
+        body.innerHTML = '<tr><td class="text-center text-apex-mute" colspan="' + (schema.cols.length + 1) + '">'
+          + 'Belum ada data ' + U.esc(schema.label) + '. Klik “Tambah Data” untuk membuat entri pertama.</td></tr>';
+      } else {
+        body.innerHTML = rows.map(function (r) {
+          return '<tr>' + schema.cols.map(function (c) {
+            return '<td>' + Crud.cell(Crud.entity, r, c) + '</td>';
+          }).join('')
+            + '<td><div class="flex gap-2">'
+            + '<button class="apex-icon-btn" data-crud-edit="' + U.esc(r.id) + '" title="Ubah" type="button" aria-label="Ubah data">'
+            + '<svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg></button>'
+            + '<button class="apex-icon-btn danger" data-crud-del="' + U.esc(r.id) + '" title="Hapus" type="button" aria-label="Hapus data">'
+            + '<svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button>'
+            + '</div></td></tr>';
+        }).join('');
+      }
+
+      U.$('crudMeta').textContent = rows.length + ' baris · entitas “' + schema.label
+        + '” · disimpan di localDB dan siap disinkronkan ke Google Sheets.';
+    },
+
+    openForm: function (id) {
+      var schema = Crud.SCHEMA[Crud.entity];
+      var record = id ? localDB.find(Crud.entity, id) : null;
+      Crud.editing = record || null;
+      var html = schema.fields.map(function (f) {
+        var val = record ? (record[f.key] === undefined || record[f.key] === null ? '' : record[f.key]) : (f['default'] || '');
+        var control;
+        if (f.type === 'select') {
+          control = '<select class="apex-select" id="fld-' + f.key + '" name="' + f.key + '">'
+            + f.options.map(function (o) { return '<option value="' + U.esc(o) + '"' + (String(val) === String(o) ? ' selected' : '') + '>' + U.esc(o) + '</option>'; }).join('')
+            + '</select>';
+        } else if (f.type === 'entity') {
+          var opts = localDB.list(f.source).map(function (o) {
+            return '<option value="' + U.esc(o.id) + '"' + (String(val) === String(o.id) ? ' selected' : '') + '>' + U.esc(o.name) + '</option>';
+          }).join('');
+          control = '<select class="apex-select" id="fld-' + f.key + '" name="' + f.key + '">'
+            + '<option value="">— tidak diatur —</option>' + opts + '</select>';
+        } else if (f.type === 'number') {
+          control = '<input class="apex-input apex-num" id="fld-' + f.key + '" name="' + f.key + '" type="number"'
+            + (f.min !== undefined ? ' min="' + f.min + '"' : '')
+            + (f.max !== undefined ? ' max="' + f.max + '"' : '')
+            + ' step="1" value="' + U.esc(val) + '"/>';
+        } else {
+          control = '<input class="apex-input" id="fld-' + f.key + '" name="' + f.key + '" type="text" maxlength="120" value="' + U.esc(val) + '"/>';
+        }
+        return '<div><label class="apex-label" for="fld-' + f.key + '">' + U.esc(f.label)
+          + (f.required ? ' <span style="color:#e11d48">*</span>' : '') + '</label>' + control + '</div>';
+      }).join('');
+
+      UI.modal.open(
+        (record ? 'Ubah ' : 'Tambah ') + schema.one,
+        record ? 'Memperbarui entri “' + (record.name || record.id) + '”' : 'Entri baru akan langsung memengaruhi forecast dan diagram Mermaid.',
+        html,
+        function () {
+          var data = {}, ok = true, missing = null;
+          schema.fields.forEach(function (f) {
+            var el = U.$('fld-' + f.key);
+            if (!el) return;
+            var v = el.value;
+            if (f.required && !String(v).replace(/\s/g, '')) { ok = false; if (!missing) missing = f.label; }
+            data[f.key] = f.type === 'number' ? (v === '' ? 0 : Number(v)) : String(v).replace(/^\s+|\s+$/g, '');
+          });
+          if (!ok) {
+            var err = U.$('apexFormError');
+            err.textContent = 'Kolom “' + missing + '” wajib diisi.';
+            err.classList.remove('hidden');
+            return;
+          }
+          if (record) {
+            localDB.update(Crud.entity, record.id, data);
+            UI.toast(schema.one + ' berhasil diperbarui.', 'ok');
+          } else {
+            localDB.create(Crud.entity, data);
+            UI.toast(schema.one + ' baru berhasil dibuat.', 'ok');
+          }
+          UI.modal.close();
+          Crud.renderTable();
+          Sim.refresh();
+        }
+      );
+    },
+
+    remove: function (id) {
+      var schema = Crud.SCHEMA[Crud.entity];
+      var row = localDB.find(Crud.entity, id);
+      if (!row) return;
+      if (!window.confirm('Hapus “' + (row.name || id) + '” dari ' + schema.label + '? Tindakan ini tidak dapat dibatalkan.')) return;
+      localDB.remove(Crud.entity, id);
+      UI.toast(schema.one + ' dihapus.', 'warn');
+      Crud.renderTable();
+      Sim.refresh();
+    },
+
+    bind: function () {
+      UI.tabs('entityTabs', 'data-entity', function (e) { Crud.entity = e; Crud.renderTable(); });
+
+      U.on(U.$('btnCreate'), 'click', function () { Crud.openForm(null); });
+      U.on(U.$('btnReseed'), 'click', function () {
+        if (!window.confirm('Muat ulang data awal? Seluruh perubahan lokal Anda akan hilang.')) return;
+        localDB.reset();
+        Sim.state = localDB.getState();
+        Sim.syncControls();
+        Crud.renderTable();
+        Sim.refresh();
+        UI.toast('Data awal dimuat ulang.', 'info');
+      });
+      U.on(U.$('btnExport'), 'click', function () {
+        try {
+          var blob = new Blob([localDB.export()], { type: 'application/json' });
+          var a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'apexhr-save-' + Date.now() + '.json';
+          document.body.appendChild(a); a.click();
+          document.body.removeChild(a);
+          UI.toast('Berkas save-game diekspor.', 'ok');
+        } catch (e) { UI.toast('Ekspor gagal di browser ini.', 'err'); }
+      });
+
+      var body = U.$('crudBody');
+      U.on(body, 'click', function (ev) {
+        var ed = ev.target.closest('[data-crud-edit]');
+        var dl = ev.target.closest('[data-crud-del]');
+        if (ed) Crud.openForm(ed.getAttribute('data-crud-edit'));
+        else if (dl) Crud.remove(dl.getAttribute('data-crud-del'));
+      });
+
+      U.on(U.$('apexForm'), 'submit', function (ev) {
+        ev.preventDefault();
+        if (UI.modal._submit) UI.modal._submit();
+      });
+      U.on(U.$('apexModalClose'), 'click', UI.modal.close);
+      U.on(U.$('apexFormCancel'), 'click', UI.modal.close);
+      U.on(U.$('apexOverlay'), 'click', function (ev) {
+        if (ev.target === U.$('apexOverlay')) UI.modal.close();
+      });
+      document.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape') UI.modal.close();
+      });
+    }
+  };
+
+  /* =========================================================================
+   * 11 SIMULATOR — orchestrates decisions, forecast, diagrams, CRUD
+   * ======================================================================= */
+  var Sim = {
+    state: null,
+    diagram: 'org',
+    statsBuilt: false,
+    apiOnline: false,
+
+    STATS: [
+      { id: 'revenue', label: 'Revenue Kuartalan', tone: '', fmt: function (v) { return U.money(v); } },
+      { id: 'cash', label: 'Posisi Kas', tone: 'g-violet', fmt: function (v) { return U.money(v); } },
+      { id: 'enps', label: 'eNPS Karyawan', tone: 'g-green', fmt: function (v) { return String(Math.round(v)); } },
+      { id: 'turnoverRate', label: 'Turnover', tone: 'g-amber', fmt: function (v) { return U.pct(v); } },
+      { id: 'burnoutIndex', label: 'Burnout Index', tone: 'g-rose', fmt: function (v) { return Math.round(v) + '/100'; } },
+      { id: 'shrinkage', label: 'Shrinkage', tone: 'g-amber', fmt: function (v) { return U.pct(v); } },
+      { id: 'fillRate', label: 'Rak Terisi', tone: '', fmt: function (v) { return U.pct(v); } },
+      { id: 'spanOfControl', label: 'Span of Control', tone: 'g-violet', fmt: function (v) { return v + ' : 1'; } }
+    ],
+
+    SCENARIOS: [
+      { id: 'scn-invasi', title: 'Invasi Minimarket Biru-Merah', brief: 'Minimarket nasional membuka 12 cabang dalam radius 3 km. Pertahankan revenue sambil menahan turnover.', difficulty: 'Menengah', targetRevenue: 2000000000 },
+      { id: 'scn-burnout', title: 'Krisis Burnout Shift Malam', brief: 'Sebagian besar kasir bekerja malam tanpa rotasi. eNPS anjlok, antrean memanjang, shrinkage naik.', difficulty: 'Sulit', targetRevenue: 1650000000 },
+      { id: 'scn-suksesi', title: 'Head of Supply Chain Mundur', brief: 'Kunci logistik pergi mendadak. Bangun succession pipeline sebelum rak kosong total.', difficulty: 'Sulit', targetRevenue: 1850000000 },
+      { id: 'scn-ekspansi', title: 'Ekspansi 24 Cabang Jawa Timur', brief: 'Investor masuk dengan syarat struktur organisasi profesional. Pecah peran Owner menjadi CEO, CFO, CHRO, dan COO.', difficulty: 'Ahli', targetRevenue: 4200000000 },
+      { id: 'scn-nepotisme', title: 'Tekanan Nepotisme Internal', brief: 'Keluarga meminta bonus besar. Profesional mengancam resign bila alokasi tidak adil.', difficulty: 'Menengah', targetRevenue: 2300000000 }
+    ],
+
+    init: function () {
+      localDB.init();
+      Sim.state = localDB.getState();
+      Sim.buildStats();
+      Sim.buildScenarios();
+      Sim.syncControls();
+      Sim.refresh();
+      Sim.bind();
+      Crud.bind();
+      Crud.renderTable();
+    },
+
+    buildStats: function () {
+      var grid = U.$('statGrid');
+      if (!grid) return;
+      grid.innerHTML = Sim.STATS.map(function (s) {
+        return '<div class="apex-stat ' + s.tone + '">'
+          + '<p class="apex-stat-label m-0">' + U.esc(s.label) + '</p>'
+          + '<p class="apex-stat-value m-0 mt-1.5" id="st-' + s.id + '">&#8212;</p>'
+          + '</div>';
+      }).join('');
+      Sim.statsBuilt = true;
+    },
+
+    buildScenarios: function () {
+      var sel = U.$('scenarioSelect');
+      if (!sel) return;
+      sel.innerHTML = Sim.SCENARIOS.map(function (s) {
+        return '<option value="' + s.id + '"' + (s.id === Sim.state.scenario.id ? ' selected' : '') + '>'
+          + U.esc(s.title) + ' &#8212; ' + U.esc(s.difficulty) + '</option>';
+      }).join('');
+      Sim.showBrief();
+    },
+
+    showBrief: function () {
+      var s = Sim.SCENARIOS.filter(function (x) { return x.id === U.$('scenarioSelect').value; })[0];
+      if (!s) return;
+      U.$('scenarioBrief').innerHTML = '<strong style="color:#1d4ed8">' + U.esc(s.title) + '</strong><br/>'
+        + U.esc(s.brief) + ' Target revenue: <strong>' + U.money(s.targetRevenue) + '</strong>.';
+    },
+
+    syncControls: function () {
+      var d = Sim.state.decisions;
+      ['acBudget', 'trainingBudget', 'bonusFairness', 'auditLevel', 'restockSpeed', 'nightShiftRatio'].forEach(function (k) {
+        var el = U.$('sl-' + k), out = U.$('out-' + k);
+        if (el) el.value = d[k];
+        if (out) out.textContent = d[k] + '%';
+      });
+      var st = U.$('strategySelect');
+      if (st) st.value = d.strategy;
+      var sc = U.$('scenarioSelect');
+      if (sc) sc.value = Sim.state.scenario.id;
+    },
+
+    bind: function () {
+      var refreshDebounced = U.debounce(function () { Sim.refresh(); }, CONFIG.RENDER_DEBOUNCE);
+      ['acBudget', 'trainingBudget', 'bonusFairness', 'auditLevel', 'restockSpeed', 'nightShiftRatio'].forEach(function (k) {
+        var el = U.$('sl-' + k);
+        U.on(el, 'input', function () {
+          Sim.state.decisions[k] = Number(el.value);
+          U.$('out-' + k).textContent = el.value + '%';
+          Sim.paintHud();
+          refreshDebounced();
+        });
+      });
+
+      U.on(U.$('strategySelect'), 'change', function () {
+        Sim.state.decisions.strategy = U.$('strategySelect').value;
+        Sim.refresh();
+      });
+      U.on(U.$('scenarioSelect'), 'change', function () {
+        var s = Sim.SCENARIOS.filter(function (x) { return x.id === U.$('scenarioSelect').value; })[0];
+        if (!s) return;
+        Sim.state.scenario = U.clone(s);
+        Sim.state.kpi.revenueTarget = s.targetRevenue;
+        Sim.showBrief();
+        Sim.refresh();
+        UI.toast('Skenario aktif: ' + s.title, 'info');
+      });
+
+      U.on(U.$('btnAdvance'), 'click', Sim.advance);
+      U.on(U.$('btnSave'), 'click', Sim.save);
+      U.on(U.$('btnReset'), 'click', Sim.reset);
+      U.on(U.$('btnSync'), 'click', Sim.sync);
+
+      UI.tabs('diagramTabs', 'data-diagram', function (kind) {
+        Sim.diagram = kind;
+        Sim.renderDiagram();
+      });
+    },
+
+    paintHud: function () {
+      var f = Forecast.compute(Sim.state), k = f.kpi;
+      Sim.STATS.forEach(function (s) {
+        var el = U.$('st-' + s.id);
+        if (!el) return;
+        UI.animateNumber(el, Number(k[s.id]) || 0, s.fmt);
+      });
+
+      var ring = U.$('healthRing');
+      var C = 2 * Math.PI * 52;
+      if (ring) ring.setAttribute('stroke-dashoffset', String(C * (1 - k.health / 100)));
+      var hv = U.$('healthValue');
+      if (hv) UI.animateNumber(hv, k.health, function (v) { return String(Math.round(v)); });
+      var verdict = U.$('healthVerdict');
+      if (verdict) {
+        verdict.innerHTML = k.health > 75 ? 'Organisasi sehat dan siap ekspansi.'
+          : k.health > 50 ? 'Stabil, namun ada tekanan operasional yang perlu diurai.'
+            : 'Kritis &#8212; bottleneck struktural menggerogoti performa bisnis.';
+      }
+
+      U.$('hudQuarter').textContent = 'Kuartal ' + Sim.state.meta.quarter + ' &#183; ' + Sim.state.meta.year;
+      U.$('hudCompany').textContent = Sim.state.meta.companyName;
+      U.$('heroQuarter').textContent = 'Q' + Sim.state.meta.quarter + ' &#183; ' + Sim.state.meta.year;
+      U.$('heroRevenue').textContent = U.money(k.revenue);
+      U.$('heroTurnover').textContent = U.pct(k.turnoverRate);
+      U.$('heroEnps').textContent = String(k.enps);
+      U.$('heroRisk').textContent = U.pct(k.operationalRisk);
+      U.$('heroSpan').textContent = k.spanOfControl + ' : 1';
+      U.$('riskCount').textContent = f.risks.length + ' temuan';
+
+      var chain = Domino.chain(Sim.state);
+      var critical = chain.filter(function (c) { return c.tone === 'critical'; }).length;
+      var dv = U.$('dominoVerdict');
+      if (dv) {
+        dv.textContent = critical ? critical + ' titik kritis' : 'Rantai positif';
+        dv.className = 'apex-chip ' + (critical ? 'apex-chip-rose' : 'apex-chip-green');
+      }
+
+      Sim.paintDomino(chain);
+      Sim.paintRisks(f.risks);
+      Sim.paintSparkline(f.quarters);
+      Sim.paintLog();
+    },
+
+    paintDomino: function (chain) {
+      var host = U.$('dominoChain');
+      if (!host) return;
+      host.innerHTML = chain.map(function (c, i) {
+        var col = c.tone === 'critical' ? '#e11d48' : c.tone === 'risk' ? '#d97706' : c.tone === 'good' ? '#059669' : '#2563eb';
+        return '<div class="apex-domino-node apex-tone-' + c.tone + '" style="animation-delay:' + (i * 55) + 'ms">'
+          + '<div class="n-step">LANGKAH ' + c.step + '</div>'
+          + '<div class="n-name">' + c.node + '</div>'
+          + '<div class="n-val" style="color:' + col + '">' + c.value + '</div>'
+          + '</div>'
+          + (i < chain.length - 1 ? '<div class="apex-domino-arrow" aria-hidden="true">&#8594;</div>' : '');
+      }).join('');
+    },
+
+    paintRisks: function (risks) {
+      var host = U.$('riskList');
+      if (!host) return;
+      if (!risks.length) {
+        host.innerHTML = '<div class="apex-risk" style="border-color:#a7f3d0;background:#ecfdf5">'
+          + '<span aria-hidden="true" style="color:#059669;font-size:1.25rem;line-height:1">&#10003;</span>'
+          + '<div><b>Tidak ada indikator risiko aktif</b><span>Seluruh metrik berada dalam koridor sehat. Pertahankan keputusan Anda.</span></div></div>';
+        return;
+      }
+      host.innerHTML = risks.map(function (r, i) {
+        var icon = r.level === 'kritis' ? '&#9888;' : (r.level === 'tinggi' ? '&#9650;' : '&#9679;');
+        return '<div class="apex-risk ' + U.esc(r.level) + '" style="animation-delay:' + (i * 60) + 'ms">'
+          + '<span aria-hidden="true" style="font-size:1.05rem;line-height:1.35">' + icon + '</span>'
+          + '<div><b>' + U.esc(r.label) + '</b><span>' + r.detail + '</span></div></div>';
+      }).join('');
+    },
+
+    paintSparkline: function (quarters) {
+      var svg = U.$('sparkline');
+      if (!svg || !quarters.length) return;
+      var W = 300, H = 64, max = 0, i, pts = [], area = '';
+      for (i = 0; i < quarters.length; i++) max = Math.max(max, quarters[i].revenue);
+      if (max <= 0) max = 1;
+      for (i = 0; i < quarters.length; i++) {
+        var x = (i / (quarters.length - 1)) * (W - 8) + 4;
+        var y = H - 6 - (quarters[i].revenue / max) * (H - 16);
+        pts.push(x.toFixed(1) + ',' + y.toFixed(1));
+      }
+      area = 'M4,' + H + ' L' + pts.join(' L') + ' L' + (W - 4) + ',' + H + ' Z';
+      svg.innerHTML = '<defs><linearGradient id="apexSpark" x1="0" x2="0" y1="0" y2="1">'
+        + '<stop offset="0%" stop-color="#34d399" stop-opacity="0.45"/><stop offset="100%" stop-color="#34d399" stop-opacity="0"/></linearGradient></defs>'
+        + '<path d="' + area + '" fill="url(#apexSpark)"/>'
+        + '<polyline fill="none" points="' + pts.join(' ') + '" stroke="#34d399" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>'
+        + '<circle cx="' + pts[pts.length - 1].split(',')[0] + '" cy="' + pts[pts.length - 1].split(',')[1] + '" r="3.5" fill="#34d399"/>';
+      var last = quarters[quarters.length - 1].revenue, first = quarters[0].revenue;
+      U.$('projDelta').textContent = (last >= first ? '+' : '') + U.round(((last - first) / (first || 1)) * 100, 1) + '% hingga Q6';
+      U.$('projDelta').style.color = last >= first ? '#6ee7b7' : '#fda4af';
+    },
+
+    paintLog: function () {
+      var host = U.$('quarterLog');
+      if (!host) return;
+      var log = Sim.state.lastQuarterLog || [];
+      if (!log.length) {
+        host.innerHTML = '<li class="text-[.9375rem] text-apex-mute">Belum ada kuartal dijalankan. Tekan &#8220;Jalankan Kuartal Berikutnya&#8221;.</li>';
+        return;
+      }
+      host.innerHTML = log.map(function (l, i) {
+        var tone = l.impact < 0 ? '#e11d48' : '#059669';
+        var icon = l.impact < 0 ? '&#8595;' : '&#8593;';
+        return '<li class="flex items-start gap-3 rounded-xl border border-apex-line bg-white px-3.5 py-2.5" style="animation:apexPop .45s cubic-bezier(.16,1,.3,1) ' + (i * 70) + 'ms both">'
+          + '<span aria-hidden="true" style="color:' + tone + ';font-weight:700">' + icon + '</span>'
+          + '<span class="text-[.9375rem] leading-snug">' + l.text + '</span></li>';
+      }).join('');
+    },
+
+    renderDiagram: function () {
+      var load = U.$('mermaidLoading');
+      if (load) load.style.display = 'flex';
+      Viz.render(Sim.diagram, Sim.state, U.$('mermaidOut'));
+      var syn = U.$('mermaidSyntax');
+      if (syn) syn.textContent = Viz.syntax[Sim.diagram] || '';
+      setTimeout(function () { if (load) load.style.display = 'none'; }, 340);
+    },
+
+    refresh: function () {
+      localDB.setState(Sim.state);
+      Sim.paintHud();
+      Sim.renderDiagram();
+      var badge = U.$('apiModeChip');
+      if (badge) {
+        badge.textContent = Sim.apiOnline ? 'REST API' : 'localDB';
+        badge.className = 'apex-chip ' + (Sim.apiOnline ? 'apex-chip-green' : 'apex-chip-blue');
+      }
+      var chip = U.$('mermaidStatus');
+      if (chip) chip.textContent = Viz.ready ? 'mermaid v10 live' : 'fallback svg';
+    },
+
+    advance: function () {
+      Sim.state = Forecast.advance(Sim.state);
+      Sim.syncControls();
+      Sim.refresh();
+      var f = Forecast.compute(Sim.state);
+      UI.toast('Kuartal ' + Sim.state.meta.quarter + ' dieksekusi &#183; ' + f.risks.length + ' risiko aktif.', f.risks.length ? 'warn' : 'ok');
+      Api.save(Sim.state);
+    },
+
+    save: function () {
+      localDB.setState(Sim.state);
+      UI.toast('Progres disimpan ke localDB.', 'ok');
+      Api.save(Sim.state).then(function (res) {
+        if (res) UI.toast('Tersinkron ke Google Sheets.', 'ok');
+      });
+    },
+
+    reset: function () {
+      if (!window.confirm('Reset simulasi ke kondisi awal? Seluruh progres akan hilang.')) return;
+      Sim.state = localDB.reset();
+      Sim.syncControls();
+      Crud.renderTable();
+      Sim.refresh();
+      UI.toast('Simulasi direset ke kondisi awal.', 'info');
+    },
+
+    sync: function () {
+      if (!CONFIG.API_BASE) {
+        UI.toast('Set CONFIG.API_BASE ke URL /exec Apps Script untuk mengaktifkan sinkronisasi.', 'warn');
+        return;
+      }
+      UI.toast('Menyinkronkan state ke REST API...', 'info');
+      Api.save(Sim.state).then(function (res) {
+        if (res && res.success) {
+          Sim.apiOnline = true;
+          UI.toast('State tersinkron ke Google Sheets.', 'ok');
+        } else {
+          UI.toast('Sinkronisasi gagal &#8212; mode localDB tetap aktif.', 'err');
+        }
+        Sim.refresh();
+      });
+    },
+
+    probeApi: function () {
+      if (!CONFIG.API_BASE) { Sim.refresh(); return; }
+      Api.ping().then(function (ok) {
+        Sim.apiOnline = ok;
+        Sim.refresh();
+      });
+    }
+  };
+
+  /* =========================================================================
+   * 12 LANDING
+   * ======================================================================= */
+  var Landing = {
+    init: function () {
+      UI.nav();
+      UI.reveal();
+      UI.counters();
+      UI.accordion('faqList');
+      var y = U.$('footerYear');
+      if (y) y.textContent = String(new Date().getFullYear());
+
+      Viz.init();
+      var heroHost = U.$('heroMermaid');
+      if (heroHost) {
+        heroHost.style.background = '#ffffff';
+        heroHost.style.borderRadius = '12px';
+        heroHost.style.padding = '8px';
+        heroHost.style.minHeight = '150px';
+      }
+      var fat = U.$('featureFatigue');
+      if (fat && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) {
+              Viz.render('fatigue', Sim.state, fat);
+              io.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.25 });
+        io.observe(fat);
+      } else if (fat) {
+        Viz.render('fatigue', Sim.state, fat);
+      }
+    }
+  };
+
+  /* =========================================================================
+   * 13 BOOT
+   * ======================================================================= */
+  var Boot = {
+    init: function () {
+      try {
+        Sim.init();
+        Landing.init();
+        Viz.render('org', Sim.state, U.$('heroMermaid'));
+        Sim.probeApi();
+        U.$('apiPreview').textContent = JSON.stringify({
+          success: true,
+          message: 'Forecast dihitung ulang.',
+          data: { kpi: Forecast.compute(Sim.state).kpi },
+          timestamp: U.iso()
+        }, null, 2).slice(0, 480);
+      } catch (e) {
+        if (window.console && console.error) console.error('ApexHR boot error', e);
+      }
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', Boot.init);
+  } else {
+    Boot.init();
+  }
+
+  window.ApexHR = {
+    localDB: localDB, Forecast: Forecast, Viz: Viz, Api: Api,
+    Sim: Sim, Crud: Crud, CONFIG: CONFIG, UI: UI
+  };
+})();
+//]]>
+</script>
+
+</body>
+</html>
